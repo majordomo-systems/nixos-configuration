@@ -10,8 +10,18 @@
       # ./hosts/server.nix
       ./hosts/workstation.nix
       ./users.nix
+      <catppuccin/modules/nixos>
       <home-manager/nixos>
     ];
+
+  home-manager.users.developer = {
+    imports = [
+      <catppuccin/modules/home-manager>
+    ];
+  };
+
+  catppuccin.flavor = "mocha";
+  catppuccin.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

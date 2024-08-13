@@ -25,32 +25,33 @@
     };
     enableGhostscriptFonts = true;
     packages = with pkgs; [
-      #corefonts # Microsoft free fonts
-      inconsolata # monospaced
-      unifont # some international languages
-      font-awesome
-      freefont_ttf
-      open-sans
-      liberation_ttf
-      liberation-sans-narrow
-      ttf_bitstream_vera
-      libertine
+      #corefonts # Microsoft fonts
       ubuntu_font_family
-      gentium
-      # Good monospace fonts
+      nerdfonts
+      fira
+      fira-mono
+      fira-code
+      fira-code-nerdfont
       source-code-pro
+      open-sans
+      font-awesome
     ];
   };
 
   environment.systemPackages = with pkgs; [
     gnome.gnome-tweaks
+    gnomeExtensions.quake-terminal
+    gnomeExtensions.alphabetical-app-grid
+    protonvpn-gui
     pavucontrol
     flameshot
     tilix
     firefox
     chromium
     vscode
-    # zoom-us # x86 systems only
+    # hyper # x86 systems only
+    # warp-terminal
+    # zoom-us
   ];
 }
 

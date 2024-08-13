@@ -3,7 +3,6 @@
   imports = [
     ./applications/zsh.nix
     ./applications/tmux.nix
-    ./applications/tilix.nix
   ];
 
   home.username = "developer";
@@ -11,10 +10,7 @@
   home.stateVersion = "24.05";
 
   home.packages = with pkgs; [
-    firebase-tools
-    nodenv
-    nodejs
-    electron
-    go
+    ansible
+    terraform
   ];
 }

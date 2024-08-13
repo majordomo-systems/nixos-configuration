@@ -8,6 +8,9 @@
     bash
     zsh
     oh-my-zsh
+    zsh-powerlevel10k
+    catppuccin
+    protonvpn-cli
     neovim
     vimPlugins.nvchad
     vimPlugins.nvchad-ui
