@@ -5,9 +5,6 @@
     tmate
     git
     gh
-    docker
-    docker-compose
-    lazydocker
     ctop
     htop
     btop
@@ -18,11 +15,12 @@
     w3m
     zip
     unzip
-    trash-cli
     neofetch
+    trash-cli
+    speedtest-cli
+    protonvpn-cli
     openvpn
     open-vm-tools
-    speedtest-cli
     python3
   ];
 }

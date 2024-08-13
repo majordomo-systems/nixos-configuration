@@ -2,7 +2,9 @@
 
 {
   imports = [
-    ./applications/zsh.nix
+    ../../applications/zsh.nix
+    ../../applications/tmux.nix
+    ../../applications/tilix.nix
   ];
 
   home.username = "developer";

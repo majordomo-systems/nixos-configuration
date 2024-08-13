@@ -1,9 +1,9 @@
 { config, pkgs, ... }:
-
 {
   imports = [
-    ../../../systemPackages-extended.nix
-    ./applications/zsh.nix
+    ../../applications/zsh.nix
+    ../../applications/tmux.nix
+    ../../applications/tilix.nix
   ];
 
   home.username = "developer";
@@ -11,6 +11,10 @@
   home.stateVersion = "24.05";
 
   home.packages = with pkgs; [
-    hd5
+    firebase-tools
+    nodenv
+    nodejs
+    electron
+    go
   ];
 }
