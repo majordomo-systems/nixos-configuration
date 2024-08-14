@@ -49,9 +49,10 @@
     firefox
     chromium
     vscode
-    # hyper # x86 systems only
-    # warp-terminal
-    # zoom-us
+    # x86 systems only:
+      # hyper
+      # warp-terminal
+      # zoom-us
   ];
 }
 

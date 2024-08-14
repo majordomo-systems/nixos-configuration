@@ -9,6 +9,7 @@
     wget
     curl
     xclip
+    openssh
     openssl
     ccrypt
     ripgrep

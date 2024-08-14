@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     tmate
+    ntp
     git
     gh
     ctop
@@ -14,8 +15,10 @@
     duf
     w3m
     zip
+    gzip
     unzip
     neofetch
+    timeshift
     trash-cli
     speedtest-cli
     protonvpn-cli
