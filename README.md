@@ -19,3 +19,8 @@ https://extensions.gnome.org/extension/3193/blur-my-shell/
 # https://extensions.gnome.org/extension/905/refresh-wifi-connections/
 # https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/
 # https://extensions.gnome.org/extension/19/user-themes/
+
+
+sudo nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+sudo nix-channel --add https://github.com/catppuccin/nix/archive/main.tar.gz catppuccin
+sudo nix-channel --update
