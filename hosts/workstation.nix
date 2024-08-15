@@ -40,8 +40,14 @@
 
   environment.systemPackages = with pkgs; [
     gnome.gnome-tweaks
+    gnomeExtensions.dash-to-panel
+    gnomeExtensions.dock-from-dash
     gnomeExtensions.quake-terminal
     gnomeExtensions.alphabetical-app-grid
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.clipboard-indicator
+    gnomeExtensions.sound-output-device-chooser
+    gnomeExtensions.bluetooth-quick-connect
     protonvpn-gui
     pavucontrol
     flameshot
