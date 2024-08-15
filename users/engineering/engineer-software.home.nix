@@ -14,7 +14,10 @@
     firebase-tools
     nodenv
     nodejs
+    nodePackages.npm
+    nodePackages.pnpm
     electron
+    python3
     go
   ];
 }

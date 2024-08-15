@@ -12,6 +12,7 @@
   home.stateVersion = "24.05";
 
   home.packages = with pkgs; [
+    python3
     hd5
   ];
 }

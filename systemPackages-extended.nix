@@ -24,6 +24,5 @@
     protonvpn-cli
     openvpn
     open-vm-tools
-    python3
   ];
 }
