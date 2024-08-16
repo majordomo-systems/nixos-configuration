@@ -6,12 +6,11 @@
 
     initExtra = ''
 
-      # Bindings
-      bindkey "\e[A": history-search-backward
-      bindkey "\e[B": history-search-forward
-      bindkey "\e[C": forward-char
-      bindkey "\e[D": backward-char
-      bindkey '^f' autosuggest-accept
+      # Bindings for Bash
+      bind '"\e[A": history-search-backward'
+      bind '"\e[B": history-search-forward'
+      bind '"\e[C": forward-char'
+      bind '"\e[D": backward-char'
 
       # Alias
       alias ..="cd .."
