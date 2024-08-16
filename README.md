@@ -24,3 +24,7 @@ https://extensions.gnome.org/extension/3193/blur-my-shell/
 sudo nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
 sudo nix-channel --add https://github.com/catppuccin/nix/archive/main.tar.gz catppuccin
 sudo nix-channel --update
+
+[Installing NixOS with Hyprland!](https://josiahalenbrown.substack.com/p/installing-nixos-with-hyprland)
+
+[Managing your NixOS configuration with Flakes and Home Manager!](https://josiahalenbrown.substack.com/p/managing-your-nixos-configuration)

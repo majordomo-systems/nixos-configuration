@@ -48,13 +48,35 @@
     gnomeExtensions.clipboard-indicator
     gnomeExtensions.sound-output-device-chooser
     gnomeExtensions.bluetooth-quick-connect
+    gnomeExtensions.forge
+    gnomeExtensions.logo-menu
+    gnomeExtensions.vitals
+    gnomeExtensions.space-bar
+    gnomeExtensions.top-bar-organizer
     protonvpn-gui
     pavucontrol
     flameshot
     tilix
     firefox
     chromium
+    ungoogled-chromium
+    dunst
+    networkmanagerapplet
     vscode
+
+    # hyprland:
+    # hyprland
+    # waybar
+    # swww # for wallpapers
+    # xdg-desktop-portal-gtk
+    # xdg-desktop-portal-hyprland
+    # xwayland
+    # meson
+    # wayland-protocols
+    # wayland-utils
+    # wl-clipboard
+    # wlroots
+     
     # x86 systems only:
       # hyper
       # warp-terminal

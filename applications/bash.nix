@@ -1,18 +1,10 @@
 { pkgs, config, ... }:
 
 {
-  programs.zsh = {
+  programs.bash = {
     enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-    oh-my-zsh = {
-      enable = true;
-      plugins = [ "docker-compose" "docker" "git" "history" "dirhistory" "node" "npm" "z" "fzf" "sudo" "web-search" "copypath" "copyfile" "jsontools"];
-      theme = "dst";
-    };
+
     initExtra = ''
-      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
 
       # Bindings
       bindkey "\e[A": history-search-backward

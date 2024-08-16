@@ -14,6 +14,7 @@
     ccrypt
     ripgrep
     fzf
+    nnn
     tmux
     bash
     zsh
