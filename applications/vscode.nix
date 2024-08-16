@@ -4,7 +4,9 @@
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
-      astro-build.astro-vscode
+      catppuccin.catppuccin-vsc
+      catppuccin.catppuccin-vsc-icons
+      # astro-build.astro-vscode
     ];
   };
 }

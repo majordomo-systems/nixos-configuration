@@ -53,7 +53,7 @@
       alias go='git checkout '
       alias gk='gitk --all&'
       alias gx='gitx --all'
-      
+
       # History settings
       export HISTSIZE=100000
       export HISTFILE="$HOME/.history"
