@@ -57,6 +57,7 @@
     pavucontrol
     flameshot
     tilix
+    alacritty
     firefox
     chromium
     ungoogled-chromium

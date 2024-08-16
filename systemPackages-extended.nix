@@ -4,12 +4,10 @@
   environment.systemPackages = with pkgs; [
     tmate
     ntp
-    git
-    gh
     ctop
     htop
     btop
-    mc
+    bottom
     tldr
     jq
     duf

@@ -2,10 +2,14 @@
 
 {
   environment.systemPackages = with pkgs; [
+    git
+    gh
+    lazygit
     docker
     docker-compose
     lazydocker
     coreutils
+    gcc
     wget
     curl
     xclip
@@ -13,6 +17,7 @@
     openssl
     ccrypt
     ripgrep
+    fd
     fzf
     nnn
     tmux
@@ -24,5 +29,7 @@
     neovim
     vimPlugins.nvchad
     vimPlugins.nvchad-ui
+    vimPlugins.LazyVim
+    vimPlugins.nvim-treesitter
   ];
 }

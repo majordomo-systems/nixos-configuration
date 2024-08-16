@@ -1,0 +1,1 @@
+vscode-extensions.astro-build.astro-vscode
