@@ -27,11 +27,14 @@
       alias ....="cd ../../.."
       alias c="clear"
       alias e="exit"
-      alias n="nvim"
+      alias nv="nvim"
       alias t="tmux"
       alias tn="(){tmux new -s $1}"
       alias p="pnpm"
-      alias ls='nnn -de'
+      alias l="ls -la"       # List in long format, include dotfiles
+      alias ls="ls -la"       # List in long format, include dotfiles
+      alias ld="ls -ld */"   # List in long format, only directories
+      alias nnn='nnn -de'
       alias lzd='lazydocker'
 
       # Digital Ocean Droplet Aliases

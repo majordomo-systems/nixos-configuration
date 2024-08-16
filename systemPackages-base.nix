@@ -30,6 +30,7 @@
     vimPlugins.nvchad
     vimPlugins.nvchad-ui
     vimPlugins.LazyVim
+    vimPlugins.nnn-vim
     vimPlugins.nvim-treesitter
   ];
 }

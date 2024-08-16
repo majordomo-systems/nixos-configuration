@@ -6,6 +6,8 @@
     ../../applications/bash.nix
     ../../applications/tmux.nix
     ../../applications/tilix.nix
+    ../../applications/nnn.nix
+    ../../applications/alacritty.nix
   ];
 
   home.username = "developer";

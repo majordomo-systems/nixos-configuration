@@ -14,6 +14,8 @@
       <home-manager/nixos>
     ];
   # ##################################################################################### #
+  home-manager.backupFileExtension = "backup";
+  
   home-manager.users.developer = {
     imports = [
       <catppuccin/modules/home-manager>
