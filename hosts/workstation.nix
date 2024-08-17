@@ -59,7 +59,7 @@
     tilix
     alacritty
     firefox
-    chromium
+    # chromium
     ungoogled-chromium
     dunst
     networkmanagerapplet

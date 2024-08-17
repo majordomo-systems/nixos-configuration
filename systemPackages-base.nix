@@ -2,6 +2,12 @@
 
 {
   environment.systemPackages = with pkgs; [
+    bash
+    zsh
+    oh-my-zsh
+    zsh-powerlevel10k
+    catppuccin
+    tmux
     git
     gh
     lazygit
@@ -21,12 +27,9 @@
     fzf
     nnn
     yazi
-    tmux
-    bash
-    zsh
-    oh-my-zsh
-    zsh-powerlevel10k
-    catppuccin
+    imagemagick
+    ffmpegthumbnailer
+    poppler
     neovim
     vimPlugins.nvchad
     vimPlugins.nvchad-ui

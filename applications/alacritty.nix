@@ -30,8 +30,9 @@ in
       # fullscreen = true
       dimensions = { columns = 120, lines = 30 }
 
-    [shell]
-      program = "/run/current-system/sw/bin/tmux"
-      args = [ "new-session", "-A", "-s", "main" ]
+    # Launch TMUX Automatically
+    # [shell]
+    #   program = "/run/current-system/sw/bin/tmux"
+    #   args = [ "new-session", "-A", "-s", "main" ]
   '';
 }
