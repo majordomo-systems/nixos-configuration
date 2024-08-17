@@ -15,6 +15,7 @@
     zip
     gzip
     unzip
+    zoxide
     neofetch
     timeshift
     trash-cli

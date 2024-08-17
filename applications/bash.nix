@@ -6,6 +6,9 @@
 
     initExtra = ''
 
+      # Zoxide initialization
+      eval "$(zoxide init bash)"
+
       # Bindings for Bash
       bind '"\e[A": history-search-backward'
       bind '"\e[B": history-search-forward'

@@ -20,6 +20,7 @@
     fd
     fzf
     nnn
+    yazi
     tmux
     bash
     zsh

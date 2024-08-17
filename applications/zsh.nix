@@ -14,6 +14,9 @@
     initExtra = ''
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
 
+      # Zoxide initialization
+      eval "$(zoxide init zsh)"
+
       # Bindings
       bindkey "\e[A": history-search-backward
       bindkey "\e[B": history-search-forward
