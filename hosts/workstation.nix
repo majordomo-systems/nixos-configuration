@@ -54,6 +54,7 @@
     gnomeExtensions.top-bar-organizer
     protonvpn-gui
     pavucontrol
+    timeshift
     flameshot
     tilix
     alacritty

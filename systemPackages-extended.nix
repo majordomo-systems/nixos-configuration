@@ -17,7 +17,6 @@
     unzip
     zoxide
     neofetch
-    timeshift
     trash-cli
     speedtest-cli
     protonvpn-cli
