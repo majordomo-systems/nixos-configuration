@@ -52,6 +52,7 @@
     gnomeExtensions.forge
     gnomeExtensions.space-bar
     gnomeExtensions.top-bar-organizer
+    github-desktop
     protonvpn-gui
     pavucontrol
     timeshift
