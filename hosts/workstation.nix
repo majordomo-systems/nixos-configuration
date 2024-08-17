@@ -40,6 +40,7 @@
 
   environment.systemPackages = with pkgs; [
     gnome.gnome-tweaks
+    gnome-extension-manager
     gnomeExtensions.dash-to-panel
     gnomeExtensions.dock-from-dash
     gnomeExtensions.quake-terminal
@@ -49,8 +50,6 @@
     gnomeExtensions.sound-output-device-chooser
     gnomeExtensions.bluetooth-quick-connect
     gnomeExtensions.forge
-    gnomeExtensions.logo-menu
-    gnomeExtensions.vitals
     gnomeExtensions.space-bar
     gnomeExtensions.top-bar-organizer
     protonvpn-gui
