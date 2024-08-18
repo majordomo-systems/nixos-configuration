@@ -65,19 +65,6 @@
     dunst
     networkmanagerapplet
     vscode
-
-    # hyprland:
-    # hyprland
-    # waybar
-    # swww # for wallpapers
-    # xdg-desktop-portal-gtk
-    # xdg-desktop-portal-hyprland
-    # xwayland
-    # meson
-    # wayland-protocols
-    # wayland-utils
-    # wl-clipboard
-    # wlroots
      
     # x86 systems only:
       # hyper

@@ -75,35 +75,6 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
   # ##################################################################################### #
-  # Hyprland Configuration
-  #  programs.hyprland = {
-  #     enable = true; 
-  #     # xwayland.hidpi = true;
-  #     xwayland.enable = true;
-  #   };
-  # 
-  #   # Hint Electon apps to use wayland
-  #   environment.sessionVariables = {
-  #     NIXOS_OZONE_WL = "1";
-  #   };
-  # 
-  #   services.dbus.enable = true;
-  #   xdg.portal = {
-  #     enable = true;
-  #     wlr.enable = true;
-  #     extraPortals = [
-  #       pkgs.xdg-desktop-portal-gtk
-  #     ];
-  #   };
-  # 
-  #   nixpkgs.overlays = [
-  #     (self: super: {
-  #       waybar = super.waybar.overrideAttrs (oldAttrs: {
-  #         mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-  #       });
-  #     })
-  #   ];
-  # ##################################################################################### #
 
   programs.direnv.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

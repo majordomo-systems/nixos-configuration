@@ -6,8 +6,14 @@
     # ./apps/zsh.nix
     # ./apps/bash.nix
     # ./apps/tilix.nix
-    ./apps/alacritty.nix
+    # ./apps/alacritty.nix
   ];
+
+  # Enable the Catppuccin theme
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+  };
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -50,6 +56,7 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
 
+    xwayland
     bash
     zsh
     oh-my-zsh
@@ -59,8 +66,8 @@
     git
     gh
     lazygit
-    docker
-    docker-compose
+    # docker
+    # docker-compose
     lazydocker
     coreutils
     gcc
@@ -114,31 +121,31 @@
     gnomeExtensions.alphabetical-app-grid
     gnomeExtensions.blur-my-shell
     gnomeExtensions.clipboard-indicator
-    gnomeExtensions.sound-output-device-chooser
-    gnomeExtensions.bluetooth-quick-connect
+    # gnomeExtensions.sound-output-device-chooser
+    # gnomeExtensions.bluetooth-quick-connect
+    # gnomeExtensions.top-bar-organizer
     gnomeExtensions.forge
     gnomeExtensions.space-bar
-    gnomeExtensions.top-bar-organizer
     github-desktop
     protonvpn-gui
     pavucontrol
     timeshift
     flameshot
-    tilix
-    alacritty
-    firefox
+    # tilix
+    # alacritty
+    # firefox
     # chromium
-    ungoogled-chromium
+    # ungoogled-chromium
+    # vscode
     dunst
     networkmanagerapplet
-    vscode
     firebase-tools
     nodenv
     nodejs
     nodePackages.npm
     nodePackages.pnpm
     electron
-    python3
+    # python3
     go
     hugo
 
@@ -153,6 +160,8 @@
     open-sans
     font-awesome
   ];
+
+  # fonts.fontconfig.enable = true;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
