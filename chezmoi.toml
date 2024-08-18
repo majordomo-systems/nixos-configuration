@@ -1,0 +1,3 @@
+encryption = "age"
+merge.command = "nvim"
+merge.args = ["-d"]
