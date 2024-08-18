@@ -2,7 +2,7 @@
 
 # wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/distros/ubuntu/desktop/ubuntu-desktop-install.sh
 
-# INSTALL OPEN VM TOOLS
+# INSTALL SYSTEM SOFTWARE
 sudo apt -y update && sudo apt -y upgrade
 sudo apt-get -y install curl build-essential software-properties-common python3-pip alacritty chromium tilix open-vm-tools open-vm-tools-desktop
 
