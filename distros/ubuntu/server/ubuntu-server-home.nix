@@ -77,7 +77,7 @@
     openssh
     openssl
     ccrypt
-    gnupg22
+    age
     ripgrep
     fd
     fzf
