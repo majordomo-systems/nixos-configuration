@@ -1,10 +1,16 @@
 #!/bin/bash
 
+# wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/distros/ubuntu/desktop/ubuntu-desktop-install.sh
+
 # INSTALL OPEN VM TOOLS
 sudo apt -y update && sudo apt -y upgrade
-sudo apt-get -y install open-vm-tools open-vm-tools-desktop
+sudo apt-get -y install curl build-essential software-properties-common python3-pip alacritty chromium tilix open-vm-tools open-vm-tools-desktop
 
 ####################################################################################
+
+# INITIAL CLEANUP
+cd ~/
+rm -Rf Music Pictures Videos Templates
 
 # INSTALL WALLPAPER
 cd /usr/share/backgrounds
@@ -12,11 +18,7 @@ sudo wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuratio
 gsettings set org.gnome.desktop.background picture-uri file:////usr/share/backgrounds/M3-MacBook-Pro-Wallpaper-8K.png
 gsettings set org.gnome.desktop.background picture-uri-dark file:////usr/share/backgrounds/M3-MacBook-Pro-Wallpaper-8K.png
 
-# INITIAL CLEANUP
-cd ~/
-rm -Rf Music Pictures Videos Templates
-
-sudo apt-get -y install curl build-essential software-properties-common python3-pip alacritty chromium tilix
+####################################################################################
 
 # INSTALL VSCODE
 cd ~/Downloads
@@ -43,7 +45,9 @@ sudo usermod -aG docker $USER
 wget https://github.com/shiftkey/desktop/releases/download/release-3.4.3-linux1/GitHubDesktop-linux-arm64-3.4.3-linux1.deb
 sudo dpkg -i GitHubDesktop-linux-arm64-3.4.3-linux1.deb
 
-# Nix Installation
+####################################################################################
+
+# NIX INSTALLATION
 sh <(curl -L https://nixos.org/nix/install) --no-daemon
 . /home/developer/.nix-profile/etc/profile.d/nix.sh 
 mkdir -p ~/.config/nix
@@ -51,13 +55,13 @@ echo "experimental-features = nix-command flakes" | tee -a ~/.config/nix/nix.con
 source ~/.profile
 nix run nixpkgs#cowsay Nix Installation Complete!
 
-# Nix Home Manager Installation
+# NIX HOME MANAGER INSTALLATION
 nix run home-manager/master -- init --switch
 # To modify nix configuration:
 # code /home/developer/.config/home-manager/home.nix
 # nix run nixpkgs#home-manager -- switch
 
-####################################################################################
+# NIX HOME MANAGER CONFIGURATION
 
 nix-channel --add https://github.com/nix-community/home-manager/archive/release-24.05.tar.gz home-manager
 nix-channel --add https://github.com/catppuccin/nix/archive/main.tar.gz catppuccin
@@ -71,13 +75,12 @@ wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/mai
 wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/applications/tilix.nix
 wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/applications/tmux.nix
 wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/applications/zsh.nix
-
 cd ~/.config/home-manager
 rm flake.nix
-wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/ubuntu-desktop-flake.nix
+wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/distros/ubuntu/desktop/ubuntu-desktop-flake.nix
 mv ubuntu-desktop-flake.nix flake.nix
 rm home.nix
-wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/ubuntu-desktop-home.nix
+wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/distros/ubuntu/desktop/ubuntu-desktop-home.nix
 mv ubuntu-desktop-home.nix home.nix
 nix flake update
 nix build .#homeConfigurations.developer.activationPackage
@@ -85,5 +88,7 @@ nix run .#homeConfigurations.developer.activationPackage
 cd
 ln -s .config/home-manager/home.nix .home.nix
 nix run nixpkgs#home-manager -- switch
+
+####################################################################################
 
 # sudo reboot
