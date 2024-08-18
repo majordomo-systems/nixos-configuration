@@ -86,4 +86,4 @@ cd
 ln -s .config/home-manager/home.nix .home.nix
 # nix run nixpkgs#home-manager -- switch
 
-sudo reboot
+# sudo reboot

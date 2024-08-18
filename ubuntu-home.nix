@@ -117,16 +117,16 @@
     gnome-tweaks
     gnome-extension-manager
     gnomeExtensions.dash-to-panel
-    gnomeExtensions.dock-from-dash
     gnomeExtensions.quake-terminal
     gnomeExtensions.alphabetical-app-grid
     gnomeExtensions.clipboard-indicator
-    gnomeExtensions.blur-my-shell
     gnomeExtensions.forge
     gnomeExtensions.space-bar
     # gnomeExtensions.sound-output-device-chooser
     # gnomeExtensions.bluetooth-quick-connect
     # gnomeExtensions.top-bar-organizer
+    # gnomeExtensions.blur-my-shell
+    # gnomeExtensions.dock-from-dash
     # github-desktop
     # tilix
     # alacritty
