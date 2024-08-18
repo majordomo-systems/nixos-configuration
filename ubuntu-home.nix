@@ -1,3 +1,4 @@
+# nix run nixpkgs#home-manager -- switch
 { config, pkgs, ... }:
 
 {
@@ -119,24 +120,24 @@
     gnomeExtensions.dock-from-dash
     gnomeExtensions.quake-terminal
     gnomeExtensions.alphabetical-app-grid
-    gnomeExtensions.blur-my-shell
     gnomeExtensions.clipboard-indicator
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.forge
+    gnomeExtensions.space-bar
     # gnomeExtensions.sound-output-device-chooser
     # gnomeExtensions.bluetooth-quick-connect
     # gnomeExtensions.top-bar-organizer
-    gnomeExtensions.forge
-    gnomeExtensions.space-bar
-    github-desktop
-    protonvpn-gui
-    pavucontrol
-    timeshift
-    flameshot
+    # github-desktop
     # tilix
     # alacritty
     # firefox
     # chromium
     # ungoogled-chromium
     # vscode
+    protonvpn-gui
+    pavucontrol
+    timeshift
+    flameshot
     dunst
     networkmanagerapplet
     firebase-tools

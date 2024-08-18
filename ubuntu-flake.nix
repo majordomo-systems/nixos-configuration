@@ -1,3 +1,6 @@
+# nix flake update
+# nix build .#homeConfigurations.developer.activationPackage
+# nix run .#homeConfigurations.developer.activationPackage
 {
   description = "Home Manager configuration of developer";
 

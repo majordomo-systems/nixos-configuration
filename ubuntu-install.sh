@@ -38,6 +38,10 @@ sudo apt -y --fix-broken install
 sudo apt-get -y install docker-ce docker-ce-cli containerd.io docker-compose docker-compose-plugin
 sudo usermod -aG docker $USER
 
+# INSTALL GITHUB DESKTOP
+wget https://github.com/shiftkey/desktop/releases/download/release-3.4.3-linux1/GitHubDesktop-linux-arm64-3.4.3-linux1.deb
+sudo dpkg -i GitHubDesktop-linux-arm64-3.4.3-linux1.deb
+
 # Nix Installation
 sh <(curl -L https://nixos.org/nix/install) --no-daemon
 . /home/developer/.nix-profile/etc/profile.d/nix.sh 
@@ -68,8 +72,13 @@ wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/mai
 wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/applications/zsh.nix
 
 cd ~/.config/home-manager
+rm flake.nix
+wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/ubuntu-flake.nix flake.nix
 rm home.nix
 wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/ubuntu-home.nix home.nix
+nix flake update
+nix build .#homeConfigurations.developer.activationPackage
+# nix run .#homeConfigurations.developer.activationPackage
 cd
 ln -s .config/home-manager/home.nix .home.nix
 # nix run nixpkgs#home-manager -- switch
