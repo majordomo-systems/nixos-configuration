@@ -1,9 +1,10 @@
+#!/bin/bash
+
 # INSTALL OPEN VM TOOLS
 sudo apt -y update && sudo apt -y upgrade
 sudo apt-get -y install open-vm-tools open-vm-tools-desktop
 
 ####################################################################################
-#!/bin/bash
 
 # INSTALL WALLPAPER
 cd /usr/share/backgrounds
