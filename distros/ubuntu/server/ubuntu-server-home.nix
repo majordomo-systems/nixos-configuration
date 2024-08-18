@@ -57,7 +57,6 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
 
-    xwayland
     bash
     zsh
     oh-my-zsh
@@ -116,14 +115,15 @@
     speedtest-cli
     protonvpn-cli
     openvpn
-    gnome-tweaks
-    gnome-extension-manager
-    gnomeExtensions.dash-to-panel
-    gnomeExtensions.quake-terminal
-    gnomeExtensions.alphabetical-app-grid
-    gnomeExtensions.clipboard-indicator
-    gnomeExtensions.forge
-    gnomeExtensions.space-bar
+    # xwayland
+    # gnome-tweaks
+    # gnome-extension-manager
+    # gnomeExtensions.dash-to-panel
+    # gnomeExtensions.quake-terminal
+    # gnomeExtensions.alphabetical-app-grid
+    # gnomeExtensions.clipboard-indicator
+    # gnomeExtensions.forge
+    # gnomeExtensions.space-bar
     # gnomeExtensions.sound-output-device-chooser
     # gnomeExtensions.bluetooth-quick-connect
     # gnomeExtensions.top-bar-organizer
@@ -136,12 +136,12 @@
     # chromium
     # ungoogled-chromium
     # vscode
-    protonvpn-gui
-    pavucontrol
-    timeshift
-    flameshot
-    dunst
-    networkmanagerapplet
+    # protonvpn-gui
+    # pavucontrol
+    # timeshift
+    # flameshot
+    # dunst
+    # networkmanagerapplet
     firebase-tools
     nodenv
     nodejs

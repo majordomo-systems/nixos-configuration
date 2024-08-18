@@ -57,7 +57,6 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
 
-    xwayland
     bash
     zsh
     oh-my-zsh
@@ -116,6 +115,7 @@
     speedtest-cli
     protonvpn-cli
     openvpn
+    xwayland
     gnome-tweaks
     gnome-extension-manager
     gnomeExtensions.dash-to-panel
