@@ -74,16 +74,16 @@ wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/mai
 
 cd ~/.config/home-manager
 rm flake.nix
-wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/ubuntu-flake.nix
-mv ubuntu-flake.nix flake.nix
+wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/ubuntu-desktop-flake.nix
+mv ubuntu-desktop-flake.nix flake.nix
 rm home.nix
-wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/ubuntu-home.nix
-mv ubuntu-home.nix home.nix
+wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/ubuntu-desktop-home.nix
+mv ubuntu-desktop-home.nix home.nix
 nix flake update
 nix build .#homeConfigurations.developer.activationPackage
-# nix run .#homeConfigurations.developer.activationPackage
+nix run .#homeConfigurations.developer.activationPackage
 cd
 ln -s .config/home-manager/home.nix .home.nix
-# nix run nixpkgs#home-manager -- switch
+nix run nixpkgs#home-manager -- switch
 
 # sudo reboot
