@@ -93,6 +93,7 @@
     # vimPlugins.poimandres-nvim
     # vimPlugins.nnn-vim
     # vimPlugins.nvim-treesitter
+    # open-vm-tools
     chezmoi
     tmate
     ntp
@@ -113,7 +114,6 @@
     speedtest-cli
     protonvpn-cli
     openvpn
-    open-vm-tools
     gnome-tweaks
     gnome-extension-manager
     gnomeExtensions.dash-to-panel
