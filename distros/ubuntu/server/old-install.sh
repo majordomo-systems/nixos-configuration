@@ -45,105 +45,27 @@ eval `ssh-agent -s`
 ssh-add ~/.ssh/server.digitalocean_key
 
 cd
-sudo apt-get update
-sudo apt-get -y upgrade
-
-# INSTALL SYSTEM APPLICATIONS
-sudo apt-get -y install zsh curl build-essential software-properties-common gnupg2 git jq ccrypt zip unzip htop duf tilix trash-cli fonts-powerline gnome-screenshot flameshot openvpn fzf
-sudo apt-get -y install fail2ban
+sudo apt -y update && sudo apt -y upgrade
 
 cd
 wget https://majordomo-dotfiles.web.app/gitconfig && mv gitconfig .gitconfig
 wget https://majordomo-dotfiles.web.app/gitignore && mv gitignore .gitignore
 wget https://majordomo-dotfiles.web.app/gitignore_global && mv gitignore_global .gitignore_global
 
-# INSTALL NEOVIM
-cd
-wget https://github.com/neovim/neovim/releases/download/v0.10.0/nvim-linux64.tar.gz
-tar xzvf nvim-linux64.tar.gz
-mv nvim-linux64 ~/.local/share/nvim-linux64
-cd ~/.local
-mkdir bin
-cd bin
-ln -sf ~/.local/share/nvim-linux64/bin/nvim nvim
-# echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
-
-# INSTALL NVCHAD
-cd
-git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
-cd ~/.config/nvim/lua/core
-sed -i 's/load_on_startup = false/load_on_startup = true/g' default_config.lua
-cd ~/
-# echo 'alias nvim="~/.local/share/nvim-linux64/bin/nvim"' >> .zshrc
-
-# INSTALL OH MY ZSH!
-sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-chsh -s $(which zsh)
-wget -O ~/.oh-my-zsh/custom/themes/common.zsh-theme https://raw.githubusercontent.com/jackharrisonsherlock/common/master/common.zsh-theme
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-echo "source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
-cd
-awk '{gsub(/robbyrussell/, "powerlevel10k/powerlevel10k"); print}' .zshrc > .zshrc_modified && mv .zshrc_modified .zshrc
-awk '{gsub(/git/, "git zsh-autosuggestions sudo web-search copypath copyfile dirhistory history jsontools"); print}' .zshrc > .zshrc_modified && mv .zshrc_modified .zshrc
-
-# DOWNLOAD AND INSTALL DOTFILES
-wget https://majordomo-dotfiles.web.app/p10k.zsh && mv p10k.zsh .p10k.zsh
-wget https://majordomo-dotfiles.web.app/zshrc && mv zshrc .zshrc
-wget https://majordomo-dotfiles.web.app/tmux.conf && mv tmux.conf .tmux.conf
-
-# INSTALL & CONFIGURE TMUX
-sudo apt -y update
-sudo apt -y install tmux
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
-# INSTALL DISK USAGE ANALYZER (https://github.com/dundee/gdu)
-curl -L https://github.com/dundee/gdu/releases/latest/download/gdu_linux_amd64.tgz | tar xz
-chmod +x gdu_linux_amd64
-sudo mv gdu_linux_amd64 /usr/bin/gdu
-
-# INSTALL MIDNIGHT COMMANDER (https://github.com/MidnightCommander/mc/tree/master)
-sudo add-apt-repository -y universe
-sudo apt -y update
-sudo apt -y install mc
-
-# INSTALL ctop (https://github.com/bcicen/ctop)
-sudo wget https://github.com/bcicen/ctop/releases/download/v0.7.7/ctop-0.7.7-linux-amd64 -O /usr/local/bin/ctop
-sudo chmod +x /usr/local/bin/ctop
-
-# INSTALL lazydocker (https://github.com/jesseduffield/lazydocker)
-curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
-echo "alias lzd='lazydocker'" >> ~/.zshrc
-export PATH="$HOME/.local/bin:$PATH"
 
 #############################################################################################################################################
 # DEVELOPMENT
 
 # INSTALL NVM & NODEJS
-cd
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-source ~/.zshrc 2>/dev/null
-nvm install --lts
-sudo ln -s "$(which node)" /usr/bin/node
-sudo ln -s "$(which npm)" /usr/bin/npm
+# cd
+# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+# source ~/.zshrc 2>/dev/null
+# nvm install --lts
+# sudo ln -s "$(which node)" /usr/bin/node
+# sudo ln -s "$(which npm)" /usr/bin/npm
 
-# INSTALL PNPM
-curl -fsSL https://get.pnpm.io/install.sh | sh -
-
-# INSTALL FIREBASE TOOLS
-sudo npm install -g firebase-tools
-
-# INSTALL TERRAFORM
-curl https://apt.releases.hashicorp.com/gpg | gpg --dearmor > hashicorp.gpg
-sudo install -o root -g root -m 644 hashicorp.gpg /etc/apt/trusted.gpg.d/
-sudo apt-add-repository -y "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-sudo apt -y install terraform
-
-# INSTALL ANSIBLE
-sudo add-apt-repository --yes --update ppa:ansible/ansible
-sudo apt -y update
-sudo apt install -y ansible
+# # INSTALL PNPM
+# curl -fsSL https://get.pnpm.io/install.sh | sh -
 
 #############################################################################################################################################
 # CLEANUP & CREATE ENVIRONMENT

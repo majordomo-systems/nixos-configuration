@@ -22,6 +22,7 @@
     openssh
     openssl
     ccrypt
+    gnupg22
     ripgrep
     fd
     fzf

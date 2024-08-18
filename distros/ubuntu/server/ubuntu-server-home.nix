@@ -78,6 +78,7 @@
     openssh
     openssl
     ccrypt
+    gnupg22
     ripgrep
     fd
     fzf
@@ -100,6 +101,7 @@
     ctop
     htop
     btop
+    gdu
     bottom
     tldr
     jq

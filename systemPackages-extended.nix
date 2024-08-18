@@ -8,6 +8,7 @@
     ctop
     htop
     btop
+    gdu
     bottom
     tldr
     jq

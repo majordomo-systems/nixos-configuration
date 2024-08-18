@@ -4,7 +4,7 @@
 
 # INSTALL OPEN VM TOOLS
 sudo apt -y update && sudo apt -y upgrade
-sudo apt-get -y install curl wget build-essential software-properties-common python3-pip open-vm-tools open-vm-tools-desktop
+sudo apt-get -y install curl wget build-essential software-properties-common python3-pip fail2ban open-vm-tools open-vm-tools-desktop
 
 ####################################################################################
 
