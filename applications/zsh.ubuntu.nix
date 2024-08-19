@@ -12,27 +12,23 @@
       theme = "dst";
     };
     initExtra = ''
+
+      # --- setup powerlevel10k ---
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+      [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+      # --- setup fzf ---
+      # fzf key bindings and fuzzy completion
+      source ${pkgs.fzf}/share/fzf/key-bindings.zsh
+      source ${pkgs.fzf}/share/fzf/completion.zsh
+
+      # --- setup fzf theme ---
+      export FZF_DEFAULT_OPTS="--color=fg:#CDD6F4,bg:#1E1E2E,hl:#F5C2E7,fg+:#CDD6F4,bg+:#302D41,hl+:#F5C2E7,info:#94E2D5,prompt:#F28FAD,pointer:#F28FAD,marker:#F28FAD,spinner:#94E2D5,header:#B4BEFE --height 40% --layout=reverse"
 
       # set a fancy prompt (non-color, unless we know we "want" color)
       case "$TERM" in
           xterm-color|*-256color) color_prompt=yes;;
       esac
-
-      if [ -n "$force_color_prompt" ]; then
-          if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-            color_prompt=yes
-          else
-            color_prompt=
-          fi
-      fi
-
-      if [ "$color_prompt" = yes ]; then
-          PS1='\033[01;32m\u@\h\033[00m:\033[01;34m\w\033[00m\$ '
-      else
-          PS1='\u@\h:\w\$ '
-      fi
-      unset color_prompt force_color_prompt
 
       # enable color support of ls and also add handy aliases
       if [ -x /usr/bin/dircolors ]; then
@@ -41,24 +37,6 @@
           alias fgrep='fgrep --color=auto'
           alias egrep='egrep --color=auto'
       fi
-      
-      # If this is an xterm set the title to user@host:dir
-      case "$TERM" in
-      xterm*|rxvt*)
-          PS1="%{\e]0;%n@%m: %~\a%}$PS1"
-          ;;
-      *)
-          ;;
-      esac
-
-      # ---- FZF -----
-
-      # Set up fzf key bindings and fuzzy completion
-      source ${pkgs.fzf}/share/fzf/key-bindings.zsh
-      source ${pkgs.fzf}/share/fzf/completion.zsh
-
-      # --- setup fzf theme ---
-      export FZF_DEFAULT_OPTS="--color=fg:#CDD6F4,bg:#1E1E2E,hl:#F5C2E7,fg+:#CDD6F4,bg+:#302D41,hl+:#F5C2E7,info:#94E2D5,prompt:#F28FAD,pointer:#F28FAD,marker:#F28FAD,spinner:#94E2D5,header:#B4BEFE --height 40% --layout=reverse"
 
       # Zoxide initialization
       eval "$(zoxide init zsh)"
@@ -114,9 +92,9 @@
 
       # History settings
       export HISTSIZE=100000
-      export HISTFILE="\$HOME/.history"
+      export HISTFILE="$HOME/.history"
       export HISTFILESIZE=2000
-      export SAVEHIST=\$HISTSIZE
+      export SAVEHIST=$HISTSIZE
       HISTTIMEFORMAT="%Y-%m-%d %T "
       HISTCONTROL=ignoreboth
     '';

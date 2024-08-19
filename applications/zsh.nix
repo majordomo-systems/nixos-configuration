@@ -12,20 +12,13 @@
       theme = "dst";
     };
     initExtra = ''
+    
+      # --- setup powerlevel10k ---
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+      [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-      # If this is an xterm set the title to user@host:dir
-      case "$TERM" in
-      xterm*|rxvt*)
-          PS1="%{\e]0;%n@%m: %~\a%}$PS1"
-          ;;
-      *)
-          ;;
-      esac
-
-      # ---- FZF -----
-
-      # Set up fzf key bindings and fuzzy completion
+      # --- setup fzf ---
+      # fzf key bindings and fuzzy completion
       source ${pkgs.fzf}/share/fzf/key-bindings.zsh
       source ${pkgs.fzf}/share/fzf/completion.zsh
 
