@@ -171,7 +171,7 @@ wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/mai
 wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/applications/nvchad.nix
 wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/applications/tilix.nix
 wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/applications/tmux.nix
-wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/applications/zsh.nix
+wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/applications/zsh.ubuntu.nix
 cd ~/.config/home-manager
 rm flake.nix
 wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/distros/ubuntu/server/ubuntu-server-flake.nix
