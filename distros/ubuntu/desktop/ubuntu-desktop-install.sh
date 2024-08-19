@@ -18,6 +18,10 @@ sudo wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuratio
 gsettings set org.gnome.desktop.background picture-uri file:////usr/share/backgrounds/M3-MacBook-Pro-Wallpaper-8K.png
 gsettings set org.gnome.desktop.background picture-uri-dark file:////usr/share/backgrounds/M3-MacBook-Pro-Wallpaper-8K.png
 
+# GNOME TERMINAL - CATPPUCCIN
+# open preferences, choose desired theme, font family: FiraMono Code 18
+curl -L https://raw.githubusercontent.com/catppuccin/gnome-terminal/v0.3.0/install.py | python3 -
+
 ####################################################################################
 
 # INSTALL VSCODE
