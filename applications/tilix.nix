@@ -13,7 +13,7 @@ let
     dconf write /com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/use-system-font false
     dconf write /com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/font "'FiraMono Nerd Font 18'"
     dconf write /com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/background-transparency-percent 33
-    dconf write /com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/color-scheme "'Catppuccin Frappé'"
+    dconf write /com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/color-scheme "'Catppuccin Mocha'"
   '';
 
   # Define the directory for Tilix themes
@@ -53,7 +53,7 @@ in
       ${pkgs.dconf}/bin/dconf write /com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/use-system-font false
       ${pkgs.dconf}/bin/dconf write /com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/font "'FiraMono Nerd Font 18'"
       ${pkgs.dconf}/bin/dconf write /com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/background-transparency-percent 33
-      ${pkgs.dconf}/bin/dconf write /com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/color-scheme "'Catppuccin Frappé'"
+      ${pkgs.dconf}/bin/dconf write /com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/color-scheme "'Catppuccin Mocha'"
     ''};
   '';
 }
