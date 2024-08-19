@@ -3,7 +3,7 @@
 
 {
   imports = [
-    # ./apps/bash.nix
+    ./apps/bash.ubuntu.nix
     ./apps/zsh.nix
     ./apps/tmux.nix
     ./apps/tilix.nix

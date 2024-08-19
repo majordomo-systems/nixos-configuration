@@ -21,7 +21,7 @@
       source ${pkgs.fzf}/share/fzf/completion.zsh
 
       # --- setup fzf theme ---
-      export FZF_DEFAULT_OPTS="--color=fg:#CDD6F4,bg:#1E1E2E,hl:#F5C2E7,fg+:#CDD6F4,bg+:#302D41,hl+:#F5C2E7,info:#94E2D5,prompt:#F28FAD,pointer:#F28FAD,marker:#F28FAD,spinner:#94E2D5,header:#B4BEFE"
+      export FZF_DEFAULT_OPTS="--color=fg:#CDD6F4,bg:#1E1E2E,hl:#F5C2E7,fg+:#CDD6F4,bg+:#302D41,hl+:#F5C2E7,info:#94E2D5,prompt:#F28FAD,pointer:#F28FAD,marker:#F28FAD,spinner:#94E2D5,header:#B4BEFE --height 40% --layout=reverse"
 
       # Zoxide initialization
       eval "$(zoxide init zsh)"
@@ -43,8 +43,8 @@
       alias t="tmux"
       alias tn="(){ tmux new -s \$1 }"
       alias p="pnpm"
-      alias l="ls -la"       # List in long format, include dotfiles
-      alias ls="ls -la"      # List in long format, include dotfiles
+      alias l="ls -laF"       # List in long format, include dotfiles
+      alias ls="ls -laF"      # List in long format, include dotfiles
       alias ld="ls -ld */"   # List in long format, only directories
       alias nnn='nnn -de'
       alias lzd='lazydocker'
@@ -66,9 +66,19 @@
       alias gk='gitk --all&'
       alias gx='gitx --all'
 
+      # Alias definitions.
+      # You may want to put all your additions into a separate file like
+      # ~/.bash_aliases, instead of adding them here directly.
+      # See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+      if [ -f ~/.bash_aliases ]; then
+          . ~/.bash_aliases
+      fi
+
       # History settings
       export HISTSIZE=100000
       export HISTFILE="\$HOME/.history"
+      export HISTFILESIZE=2000
       export SAVEHIST=\$HISTSIZE
       HISTTIMEFORMAT="%Y-%m-%d %T "
       HISTCONTROL=ignoreboth

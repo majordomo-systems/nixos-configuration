@@ -26,8 +26,13 @@ in
 
   # Create or update the Alacritty configuration file
   xdg.configFile."alacritty/alacritty.toml".text = ''
-    # import = [ "~/.config/alacritty/catppuccin-frappe.toml" ]
-    import = [ "~/.config/alacritty/catppuccin-mocha.toml" ]
+    import = [
+      # uncomment the flavour you want below:
+      # "~/.config/alacritty/catppuccin-latte.toml"
+      # "~/.config/alacritty/catppuccin-frappe.toml"
+      # "~/.config/alacritty/catppuccin-macchiato.toml"
+      "~/.config/alacritty/catppuccin-mocha.toml"
+    ]
 
     [font]
       normal = { family = "FiraMono Nerd Font" }
@@ -38,9 +43,5 @@ in
       # fullscreen = true
       dimensions = { columns = 120, lines = 30 }
 
-    # Launch TMUX Automatically
-    # [shell]
-    #   program = "/run/current-system/sw/bin/tmux"
-    #   args = [ "new-session", "-A", "-s", "main" ]
   '';
 }

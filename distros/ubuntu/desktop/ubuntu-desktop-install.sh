@@ -73,7 +73,7 @@ nix-channel --update
 mkdir -p ~/.config/home-manager/apps
 cd ~/.config/home-manager/apps
 wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/applications/alacritty.nix
-wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/applications/bash.nix
+wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/applications/bash.ubuntu.nix
 wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/applications/nnn.nix
 wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/applications/nvchad.nix
 wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/applications/tilix.nix
