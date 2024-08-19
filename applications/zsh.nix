@@ -14,6 +14,15 @@
     initExtra = ''
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
 
+      # If this is an xterm set the title to user@host:dir
+      case "$TERM" in
+      xterm*|rxvt*)
+          PS1="%{\e]0;%n@%m: %~\a%}$PS1"
+          ;;
+      *)
+          ;;
+      esac
+
       # ---- FZF -----
 
       # Set up fzf key bindings and fuzzy completion
