@@ -50,9 +50,8 @@
           ;;
       esac
 
-      # ---- FZF -----
-
-      # Set up fzf key bindings and fuzzy completion
+      # --- setup fzf ---
+      # fzf key bindings and fuzzy completion
       eval "$(fzf --bash)"
 
       # --- setup fzf theme ---
