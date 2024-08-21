@@ -54,8 +54,15 @@
       # fzf key bindings and fuzzy completion
       eval "$(fzf --bash)"
 
-      # --- setup fzf theme ---
-      export FZF_DEFAULT_OPTS="--color=fg:#CDD6F4,bg:#1E1E2E,hl:#F5C2E7,fg+:#CDD6F4,bg+:#302D41,hl+:#F5C2E7,info:#94E2D5,prompt:#F28FAD,pointer:#F28FAD,marker:#F28FAD,spinner:#94E2D5,header:#B4BEFE --height 40% --layout=reverse"
+      # --- setup fzf theme --- https://github.com/catppuccin/fzf
+      export FZF_DEFAULT_OPTS=" \
+      --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+      --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+      --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
+      --color=selected-bg:#45475a \
+      --multi \
+      --height 40% \
+      --layout=reverse"
 
       # Zoxide initialization
       eval "$(zoxide init bash)"

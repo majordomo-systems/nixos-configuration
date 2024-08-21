@@ -7,7 +7,6 @@
     ./apps/zsh.nix
     ./apps/tmux.nix
     ./apps/tilix.nix
-    # ./apps/alacritty.nix
   ];
 
   # Enable the Catppuccin theme
