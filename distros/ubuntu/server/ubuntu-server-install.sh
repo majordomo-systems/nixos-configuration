@@ -184,6 +184,27 @@ nix run nixpkgs#home-manager -- switch
 
 ####################################################################################
 
+# Initialize chezmoi
+chezmoi init --apply majordomo-systems/dotfiles
+
+# Create chezmoi configuration file
+tee ~/.config/chezmoi/chezmoi.toml > /dev/null << EOF
+encryption = "age"
+merge.command = "nvim"
+merge.args = ["-d"]
+
+[age]
+    identity = "~/.ssh/age_key.txt"
+EOF
+
+# Decrypt Age Key - password hint: the street you grew up on
+age -d -o ~/.ssh/age_key.txt ~/.ssh/age_key.txt.enc
+
+# Apply chezmoi configuration
+chezmoi apply
+
+####################################################################################
+
 # exit
 # echo "Restarting in ..."
 # sleep 1
