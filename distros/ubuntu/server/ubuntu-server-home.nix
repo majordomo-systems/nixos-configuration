@@ -3,8 +3,8 @@
 
 {
   imports = [
-    ./apps/bash.nix
-    ./apps/zsh.nix
+    # ./apps/bash.nix
+    # ./apps/zsh.nix
     ./apps/tmux.nix
     ./apps/tilix.nix
   ];

@@ -1,3 +1,10 @@
+# NUbuntu Setup (NIX + Ubuntu)
+
+***To download installation script:***
+```
+wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/distros/ubuntu/desktop/ubuntu-desktop-install.sh
+```
+
 # NIXOS Configuration
 
 ## For NIXos Systems:
