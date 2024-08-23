@@ -39,7 +39,7 @@ in
       size = 18.0
 
     [window]
-      opacity = 0.67
+      opacity = 0.3
       # fullscreen = true
       dimensions = { columns = 120, lines = 30 }
 

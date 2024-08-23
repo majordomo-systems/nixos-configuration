@@ -14,6 +14,7 @@
       <home-manager/nixos>
     ];
   # ##################################################################################### #
+  # Home Manager
   home-manager.backupFileExtension = "backup";
   
   home-manager.users.developer = {
@@ -76,6 +77,7 @@
   system.stateVersion = "24.05"; # Did you read the comment?
   # ##################################################################################### #
 
+  # users.defaultUserShell=pkgs.zsh;
   programs.direnv.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
