@@ -19,8 +19,10 @@
     wget
     curl
     xclip
+    sshs
     openssh
     openssl
+    portal
     ccrypt
     age
     ripgrep

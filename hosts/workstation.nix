@@ -41,30 +41,45 @@
   environment.systemPackages = with pkgs; [
     gnome.gnome-tweaks
     gnome-extension-manager
+    gnomeExtensions.quick-settings-tweaker
+    gnomeExtensions.quick-settings-audio-panel
+    gnomeExtensions.privacy-settings-menu
     gnomeExtensions.dash-to-panel
-    gnomeExtensions.dock-from-dash
     gnomeExtensions.quake-terminal
     gnomeExtensions.alphabetical-app-grid
-    gnomeExtensions.blur-my-shell
     gnomeExtensions.clipboard-indicator
-    gnomeExtensions.sound-output-device-chooser
-    gnomeExtensions.bluetooth-quick-connect
+    gnomeExtensions.auto-move-windows
     gnomeExtensions.forge
     gnomeExtensions.space-bar
-    gnomeExtensions.top-bar-organizer
+    gnomeExtensions.easyScreenCast
+    gnomeExtensions.easy-docker-containers
+    gnomeExtensions.transparent-window-moving
+    gnomeExtensions.gsconnect
+    gnomeExtensions.pano
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.astra-monitor
+    gnomeExtensions.dock-from-dash
+    gnomeExtensions.sound-output-device-chooser
+    gnomeExtensions.bluetooth-quick-connect
+    # gnomeExtensions.tiling-assistant
+    # gnomeExtensions.logo-menu
+    # gnomeExtensions.top-bar-organizer
+    # gnomeExtensions.transparent-top-bar-adjustable-transparency
     github-desktop
+    tilix
+    alacritty
+    brave
+    firefox
+    firefox-devedition
+    # chromium
+    ungoogled-chromium
+    vscode
     protonvpn-gui
     pavucontrol
     timeshift
     flameshot
-    tilix
-    alacritty
-    firefox
-    # chromium
-    ungoogled-chromium
     dunst
     networkmanagerapplet
-    vscode
      
     # x86 systems only:
       # hyper

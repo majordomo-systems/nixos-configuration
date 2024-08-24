@@ -15,6 +15,7 @@
     dnsutils
     whois
     nethogs
+    termshark
   ];
 
 # Kali Linux:

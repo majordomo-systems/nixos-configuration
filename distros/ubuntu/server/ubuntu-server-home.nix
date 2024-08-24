@@ -73,8 +73,10 @@
     wget
     curl
     xclip
+    sshs
     openssh
     openssl
+    portal
     ccrypt
     age
     ripgrep
@@ -131,7 +133,9 @@
     # github-desktop
     # tilix
     # alacritty
+    # brave
     # firefox
+    # firefox-devedition
     # chromium
     # ungoogled-chromium
     # vscode

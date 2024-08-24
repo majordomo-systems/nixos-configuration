@@ -73,8 +73,10 @@
     wget
     curl
     xclip
+    sshs
     openssh
     openssl
+    portal
     ccrypt
     age
     ripgrep
@@ -117,21 +119,36 @@
     xwayland
     gnome-tweaks
     gnome-extension-manager
+    gnomeExtensions.quick-settings-tweaker
+    gnomeExtensions.quick-settings-audio-panel
+    gnomeExtensions.privacy-settings-menu
     gnomeExtensions.dash-to-panel
     gnomeExtensions.quake-terminal
     gnomeExtensions.alphabetical-app-grid
     gnomeExtensions.clipboard-indicator
+    gnomeExtensions.auto-move-windows
     gnomeExtensions.forge
     gnomeExtensions.space-bar
+    gnomeExtensions.easyScreenCast
+    gnomeExtensions.easy-docker-containers
+    gnomeExtensions.transparent-window-moving
+    # gnomeExtensions.gsconnect
+    # gnomeExtensions.pano
+    # gnomeExtensions.blur-my-shell
+    # gnomeExtensions.astra-monitor
+    # gnomeExtensions.dock-from-dash
     # gnomeExtensions.sound-output-device-chooser
     # gnomeExtensions.bluetooth-quick-connect
+    # gnomeExtensions.tiling-assistant
+    # gnomeExtensions.logo-menu
     # gnomeExtensions.top-bar-organizer
-    # gnomeExtensions.blur-my-shell
-    # gnomeExtensions.dock-from-dash
+    # gnomeExtensions.transparent-top-bar-adjustable-transparency
     # github-desktop
     # tilix
     # alacritty
+    # brave
     # firefox
+    # firefox-devedition
     # chromium
     # ungoogled-chromium
     # vscode
