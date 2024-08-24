@@ -64,6 +64,9 @@
       --height 40% \
       --layout=reverse"
 
+      # Starship initialization
+      eval "$(starship init bash)"
+
       # Zoxide initialization
       eval "$(zoxide init bash)"
 

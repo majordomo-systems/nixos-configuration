@@ -6,16 +6,7 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    oh-my-zsh = {
-      enable = true;
-      plugins = [ "docker-compose" "docker" "git" "history" "dirhistory" "node" "npm" "z" "fzf" "sudo" "web-search" "copypath" "copyfile" "jsontools"];
-      theme = "dst";
-    };
     initExtra = ''
-    
-      # --- setup powerlevel10k ---
-      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-      [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
       # --- setup fzf ---
       # fzf key bindings and fuzzy completion

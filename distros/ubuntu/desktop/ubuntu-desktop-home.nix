@@ -58,11 +58,13 @@
 
     bash
     zsh
-    oh-my-zsh
-    zsh-powerlevel10k
-    starship
-    catppuccin
     tmux
+    fd
+    bat
+    fzf
+    wget
+    curl
+    ripgrep
     git
     gh
     lazygit
@@ -71,8 +73,6 @@
     lazydocker
     coreutils
     gcc
-    wget
-    curl
     xclip
     sshs
     openssh
@@ -80,11 +80,9 @@
     portal
     ccrypt
     age
-    ripgrep
-    fd
-    bat
-    fzf
     yazi
+    # starship
+    catppuccin
     imagemagick
     ffmpegthumbnailer
     poppler

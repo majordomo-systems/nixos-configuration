@@ -22,6 +22,9 @@ gsettings set org.gnome.desktop.background picture-uri-dark file:////usr/share/b
 # open preferences, choose desired theme, font family: FiraMono Code 18
 curl -L https://raw.githubusercontent.com/catppuccin/gnome-terminal/v0.3.0/install.py | python3 -
 
+# INSTALL STARSHIP
+curl -sS https://starship.rs/install.sh | sh
+
 ####################################################################################
 
 # INSTALL VSCODE
