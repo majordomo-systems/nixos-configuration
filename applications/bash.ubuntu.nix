@@ -88,6 +88,10 @@
       alias ld="ls -ld */"   # List in long format, only directories
       alias nnn='nnn -de'
       alias lzd='lazydocker'
+      alias fzf='fzf --preview="bat --color=always {}"'
+      # Open multiple files in VSCode/NeoVim [Tab to select, ENTER to open in VSCode]
+      alias cfzf='code $(fzf -m --preview="bat --color=always {}")'
+      alias nfzf='nvim $(fzf -m --preview="bat --color=always {}")'
 
       # Digital Ocean Droplet Aliases
       alias dev="create-dev.sh"

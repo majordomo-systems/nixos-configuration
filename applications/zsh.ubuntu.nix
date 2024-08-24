@@ -61,15 +61,19 @@
       alias ....="cd ../../.."
       alias c="clear"
       alias e="exit"
-      alias nv="nvim"
-      alias t="tmux"
       alias tn="(){ tmux new -s \$1 }"
       alias p="pnpm"
       alias l="ls -laF"       # List in long format, include dotfiles
       alias ls="ls -laF --color=auto"       # List in long format, include dotfiles
       alias ld="ls -ld */"   # List in long format, only directories
+      alias nv="nvim"
+      alias t="tmux"
       alias nnn='nnn -de'
       alias lzd='lazydocker'
+      alias fzf='fzf --preview="bat --color=always {}"'
+      # Open multiple files in VSCode/NeoVim [Tab to select, ENTER to open in VSCode]
+      alias cfzf='code $(fzf -m --preview="bat --color=always {}")'
+      alias nfzf='nvim $(fzf -m --preview="bat --color=always {}")'
 
       # Digital Ocean Droplet Aliases
       alias dev="create-dev.sh"
@@ -93,8 +97,8 @@
       # ~/.bash_aliases, instead of adding them here directly.
       # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-      if [ -f ~/.bash_aliases ]; then
-          . ~/.bash_aliases
+      if [ -f ~/.zsh_aliases ]; then
+          . ~/.zsh_aliases
       fi
 
       # History settings

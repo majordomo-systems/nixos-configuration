@@ -77,7 +77,11 @@
   system.stateVersion = "24.05"; # Did you read the comment?
   # ##################################################################################### #
 
+  # users.users.developer.shell = pkgs.zsh;
+  # environment.shells = with pkgs; [ zsh ];
+
   # users.defaultUserShell=pkgs.zsh;
+
   programs.direnv.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }

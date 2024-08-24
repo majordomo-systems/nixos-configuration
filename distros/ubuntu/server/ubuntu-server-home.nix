@@ -60,6 +60,7 @@
     zsh
     oh-my-zsh
     zsh-powerlevel10k
+    starship
     catppuccin
     tmux
     git
@@ -81,6 +82,7 @@
     age
     ripgrep
     fd
+    bat
     fzf
     yazi
     imagemagick
