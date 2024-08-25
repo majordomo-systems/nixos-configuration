@@ -1,20 +1,45 @@
-{ config, pkgs, ... }:
-
 {
-  imports = [
-    ../../applications/zsh.nix
-    ../../applications/tmux.nix
-    ../../applications/tilix.nix
-  ];
+  inputs = {
+    systems.url = "github:nix-systems/default";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+  };
 
-  home.username = "developer";
-  home.homeDirectory = "/home/developer";
-  home.stateVersion = "24.05";
+  outputs =
+  {
+    self,
+    nixpkgs,
+    systems,
+  }:
+  let
+    forEachSystem =
+      f: nixpkgs.lib.genAttrs (import systems) (system: f {
+        pkgs = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
+      });
+  in
+  {
+    devShells = forEachSystem (
+      { pkgs }:
+      {
+        default = pkgs.mkShellNoCC {
+          packages = with pkgs; [
+            vscode
+            python3
+            hd5
+          ];
 
-  home.packages = with pkgs; [
-    python3
-    hd5
-  ];
+          # VSCode extension installation
+          shellHook = ''
+            mkdir -p .vscode/extensions
+            code --install-extension catppuccin.catppuccin-vsc --force
+            # Add more extensions here as needed
+          '';
+        };
+      }
+    );
+  };
 }
 
 # Apache Spark: A powerful tool for distributed data processing.

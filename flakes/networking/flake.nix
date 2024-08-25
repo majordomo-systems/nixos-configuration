@@ -1,22 +1,48 @@
-{ config, pkgs, ... }:
-
 {
-  imports = [
-    ../../applications/zsh.nix
-    ../../applications/tmux.nix
-    ../../applications/tilix.nix
-  ];
+  inputs = {
+    systems.url = "github:nix-systems/default";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+  };
 
-  home.username = "developer";
-  home.homeDirectory = "/home/developer";
-  home.stateVersion = "24.05";
+  outputs =
+  {
+    self,
+    nixpkgs,
+    systems,
+  }:
+  let
+    forEachSystem =
+      f: nixpkgs.lib.genAttrs (import systems) (system: f {
+        pkgs = import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+        };
+      });
+  in
+  {
+    devShells = forEachSystem (
+      { pkgs }:
+      {
+        default = pkgs.mkShellNoCC {
+          packages = with pkgs; [
+            vscode
+            dnsutils
+            whois
+            nethogs
+            termshark
+          ];
 
-  home.packages = with pkgs; [
-    dnsutils
-    whois
-    nethogs
-    termshark
-  ];
+          # VSCode extension installation
+          shellHook = ''
+            mkdir -p .vscode/extensions
+            code --install-extension catppuccin.catppuccin-vsc --force
+            # Add more extensions here as needed
+          '';
+        };
+      }
+    );
+  };
+}
 
 # Kali Linux:
 # Network and Web Security Tools
@@ -94,4 +120,3 @@
   # https://lindevs.com/install-tshark-on-ubuntu
   # https://opensource.com/article/20/1/wireshark-linux-tshark
   # https://www.tutorialspoint.com/monitoring-network-usage-in-linux
-}

@@ -23,6 +23,6 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.developer = import ./users/engineering/engineer-software.home.nix;
+    users.developer = import ./users/engineer.home.nix;
   };
 }
