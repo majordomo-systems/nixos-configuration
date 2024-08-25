@@ -116,7 +116,6 @@
     speedtest-cli
     protonvpn-cli
     openvpn
-    # xwayland
     # gnome-tweaks
     # gnome-extension-manager
     # gnomeExtensions.dash-to-panel
