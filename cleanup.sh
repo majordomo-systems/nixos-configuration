@@ -1,3 +1,4 @@
+# Ubuntu
 sudo apt-get clean
 sudo apt-get autoremove
 sudo apt-get --purge autoremove
