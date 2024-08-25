@@ -5,11 +5,11 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./network.nix
+      ./users.nix
       ./systemPackages-base.nix
       ./systemPackages-extended.nix
-      # ./hosts/server.nix
       ./hosts/workstation.nix
-      ./users.nix
+      # ./hosts/server.nix
       <catppuccin/modules/nixos>
       <home-manager/nixos>
     ];
