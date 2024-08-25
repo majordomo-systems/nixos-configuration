@@ -8,6 +8,19 @@
     syntaxHighlighting.enable = true;
     initExtra = ''
 
+      # set a fancy prompt (non-color, unless we know we "want" color)
+      case "$TERM" in
+          xterm-color|*-256color) color_prompt=yes;;
+      esac
+
+      # enable color support of ls and also add handy aliases
+      if [ -x /usr/bin/dircolors ]; then
+          test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+          alias grep='grep --color=auto'
+          alias fgrep='fgrep --color=auto'
+          alias egrep='egrep --color=auto'
+      fi
+
       # --- setup fzf ---
       # fzf key bindings and fuzzy completion
       source ${pkgs.fzf}/share/fzf/key-bindings.zsh
@@ -23,6 +36,9 @@
       --height 40% \
       --layout=reverse"
 
+      # Starship initialization
+      eval "$(starship init zsh)"
+      
       # Zoxide initialization
       eval "$(zoxide init zsh)"
 
@@ -39,15 +55,19 @@
       alias ....="cd ../../.."
       alias c="clear"
       alias e="exit"
-      alias nv="nvim"
-      alias t="tmux"
       alias tn="(){ tmux new -s \$1 }"
       alias p="pnpm"
       alias l="ls -laF"       # List in long format, include dotfiles
-      alias ls="ls -laF"      # List in long format, include dotfiles
+      alias ls="ls -laF --color=auto"       # List in long format, include dotfiles
       alias ld="ls -ld */"   # List in long format, only directories
+      alias nv="nvim"
+      alias t="tmux"
       alias nnn='nnn -de'
       alias lzd='lazydocker'
+      alias fzf='fzf --preview="bat --color=always {}"'
+      # Open multiple files in VSCode/NeoVim [Tab to select, ENTER to open in VSCode]
+      alias cfzf='code $(fzf -m --preview="bat --color=always {}")'
+      alias nfzf='nvim $(fzf -m --preview="bat --color=always {}")'
 
       # Digital Ocean Droplet Aliases
       alias dev="create-dev.sh"
@@ -71,15 +91,15 @@
       # ~/.bash_aliases, instead of adding them here directly.
       # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-      if [ -f ~/.bash_aliases ]; then
-          . ~/.bash_aliases
+      if [ -f ~/.zsh_aliases ]; then
+          . ~/.zsh_aliases
       fi
 
       # History settings
       export HISTSIZE=100000
-      export HISTFILE="\$HOME/.history"
+      export HISTFILE="$HOME/.history"
       export HISTFILESIZE=2000
-      export SAVEHIST=\$HISTSIZE
+      export SAVEHIST=$HISTSIZE
       HISTTIMEFORMAT="%Y-%m-%d %T "
       HISTCONTROL=ignoreboth
     '';

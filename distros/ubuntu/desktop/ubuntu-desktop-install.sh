@@ -75,11 +75,11 @@ nix-channel --add https://github.com/catppuccin/nix/archive/main.tar.gz catppucc
 nix-channel --update
 mkdir -p ~/.config/home-manager/apps
 cd ~/.config/home-manager/apps
-wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/applications/bash.ubuntu.nix && mv bash.ubuntu.nix bash.nix
+wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/applications/bash.nix
 wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/applications/nvchad.nix
 wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/applications/tilix.nix
 wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/applications/tmux.nix
-wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/applications/zsh.ubuntu.nix && mv zsh.ubuntu.nix zsh.nix
+wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/applications/zsh.nix
 cd ~/.config/home-manager
 rm flake.nix
 wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/distros/ubuntu/desktop/ubuntu-desktop-flake.nix && mv ubuntu-desktop-flake.nix flake.nix

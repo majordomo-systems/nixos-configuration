@@ -6,14 +6,18 @@
 
     initExtra = ''
 
-      # If this is an xterm set the title to user@host:dir
+      # set a fancy prompt (non-color, unless we know we "want" color)
       case "$TERM" in
-      xterm*|rxvt*)
-          PS1="\[\e]0;\\u@\h: \w\a\]$PS1"
-          ;;
-      *)
-          ;;
+          xterm-color|*-256color) color_prompt=yes;;
       esac
+
+      # enable color support of ls and also add handy aliases
+      if [ -x /usr/bin/dircolors ]; then
+          test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+          alias grep='grep --color=auto'
+          alias fgrep='fgrep --color=auto'
+          alias egrep='egrep --color=auto'
+      fi
 
       # --- setup fzf ---
       # fzf key bindings and fuzzy completion
@@ -28,6 +32,9 @@
       --multi \
       --height 40% \
       --layout=reverse"
+
+      # Starship initialization
+      eval "$(starship init bash)"
 
       # Zoxide initialization
       eval "$(zoxide init bash)"
@@ -49,10 +56,14 @@
       alias tn="(){tmux new -s $1}"
       alias p="pnpm"
       alias l="ls -laF"       # List in long format, include dotfiles
-      alias ls="ls -laF"       # List in long format, include dotfiles
+      alias ls="ls -laF --color=auto"       # List in long format, include dotfiles
       alias ld="ls -ld */"   # List in long format, only directories
       alias nnn='nnn -de'
       alias lzd='lazydocker'
+      alias fzf='fzf --preview="bat --color=always {}"'
+      # Open multiple files in VSCode/NeoVim [Tab to select, ENTER to open in VSCode]
+      alias cfzf='code $(fzf -m --preview="bat --color=always {}")'
+      alias nfzf='nvim $(fzf -m --preview="bat --color=always {}")'
 
       # Digital Ocean Droplet Aliases
       alias dev="create-dev.sh"
