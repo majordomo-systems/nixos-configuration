@@ -77,6 +77,12 @@
   system.stateVersion = "24.05"; # Did you read the comment?
   # ##################################################################################### #
 
+  # Enable automatic upgrades
+  system.autoUpgrade.enable = true;
+  system.autoUpgrade.allowReboot = true;
+
+  # ##################################################################################### #
+
   # users.users.developer.shell = pkgs.zsh;
   # environment.shells = with pkgs; [ zsh ];
 

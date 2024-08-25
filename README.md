@@ -18,7 +18,16 @@ sudo nix-channel --update
 ```
 
 ***To rebuild after making changes to configurations:***
+
 `sudo nixos rebuild-switch`
+
+***To update channels:***
+
+`sudo nix-channel --update`
+
+***To upgrade system:***
+
+`sudo nixos-rebuild switch --upgrade`
 
 ***To delete old versions of os:***
 ```
