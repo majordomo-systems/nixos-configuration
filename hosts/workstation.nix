@@ -51,16 +51,16 @@
     gnomeExtensions.auto-move-windows
     gnomeExtensions.forge
     gnomeExtensions.space-bar
-    gnomeExtensions.easyScreenCast
     gnomeExtensions.easy-docker-containers
     gnomeExtensions.transparent-window-moving
-    gnomeExtensions.gsconnect
-    gnomeExtensions.pano
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.astra-monitor
-    gnomeExtensions.dock-from-dash
-    gnomeExtensions.sound-output-device-chooser
-    gnomeExtensions.bluetooth-quick-connect
+    # gnomeExtensions.gsconnect
+    # gnomeExtensions.pano
+    # gnomeExtensions.blur-my-shell
+    # gnomeExtensions.astra-monitor
+    # gnomeExtensions.dock-from-dash
+    # gnomeExtensions.sound-output-device-chooser
+    # gnomeExtensions.bluetooth-quick-connect
+    # gnomeExtensions.easyScreenCast
     # gnomeExtensions.tiling-assistant
     # gnomeExtensions.logo-menu
     # gnomeExtensions.top-bar-organizer
