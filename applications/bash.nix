@@ -73,6 +73,20 @@
         alias cleanup='sudo apt-get clean && sudo apt-get autoremove && sudo apt-get --purge autoremove && sudo apt-get remove --purge $(deborphan) && sudo journalctl --vacuum-time=2weeks && rm -rf ~/.cache/thumbnails/*'
       fi
 
+      # Rebuild
+      if [ "$(grep '^NAME=' /etc/os-release | cut -d'=' -f2 | tr -d '"')" = "NixOS" ]; then
+        alias rebuild='sudo nixos-rebuild switch'
+      elif [ "$(grep '^NAME=' /etc/os-release | cut -d'=' -f2 | tr -d '"')" = "Ubuntu" ]; then
+        alias rebuild='nix run nixpkgs#home-manager -- switch'
+      fi
+
+      # Upgrade
+      if [ "$(grep '^NAME=' /etc/os-release | cut -d'=' -f2 | tr -d '"')" = "NixOS" ]; then
+        alias upgrade='sudo nix-channel --update && sudo nixos-rebuild switch --upgrade'
+      elif [ "$(grep '^NAME=' /etc/os-release | cut -d'=' -f2 | tr -d '"')" = "Ubuntu" ]; then
+        alias upgrade='sudo apt -y update && sudo apt -y upgrade'
+      fi
+
       # Digital Ocean Droplet Aliases
       alias dev="create-dev.sh"
       alias vpn="create-vpn.sh"
