@@ -70,6 +70,13 @@
       alias cfzf='code $(fzf -m --preview="bat --color=always {}")'
       alias nfzf='nvim $(fzf -m --preview="bat --color=always {}")'
 
+      # Cleanup
+      if [ "$(grep '^NAME=' /etc/os-release | cut -d'=' -f2 | tr -d '"')" = "NixOS" ]; then
+        alias cleanup='sudo nix-collect-garbage --delete-older-than 1d && sudo nix-collect-garbage -d && sudo rm -rf /nix/var/nix/gcroots/auto/* && nix-env --delete-generations old && nix-store --optimise && sudo nixos-rebuild boot'
+      elif [ "$(grep '^NAME=' /etc/os-release | cut -d'=' -f2 | tr -d '"')" = "Ubuntu" ]; then
+        alias cleanup='sudo apt-get clean && sudo apt-get autoremove && sudo apt-get --purge autoremove && sudo apt-get remove --purge $(deborphan) && sudo journalctl --vacuum-time=2weeks && rm -rf ~/.cache/thumbnails/*'
+      fi
+
       # Digital Ocean Droplet Aliases
       alias dev="create-dev.sh"
       alias vpn="create-vpn.sh"

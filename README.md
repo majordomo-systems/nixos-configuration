@@ -19,7 +19,7 @@ sudo nix-channel --update
 
 ***To rebuild after making changes to configurations:***
 
-`sudo nixos rebuild-switch`
+`sudo nixos-rebuild switch`
 
 ***To update channels:***
 
