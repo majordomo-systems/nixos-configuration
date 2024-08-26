@@ -6,7 +6,6 @@
     ../applications/bash.nix
     ../applications/tmux.nix
     ../applications/tilix.nix
-    ../applications/alacritty.nix
     ../applications/starship.nix
     # ../applications/nnn.nix
   ];
