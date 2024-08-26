@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ../applications/zsh.nix
     ../applications/bash.nix
+    ../applications/zsh.nix
     ../applications/tmux.nix
     ../applications/tilix.nix
     ../applications/starship.nix
