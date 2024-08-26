@@ -57,12 +57,13 @@
       alias e="exit"
       alias tn="(){ tmux new -s \$1 }"
       alias p="pnpm"
-      alias l="ls -laF"       # List in long format, include dotfiles
+      alias l="ls -laF"                     # List in long format, include dotfiles
       alias ls="ls -laF --color=auto"       # List in long format, include dotfiles
-      alias ld="ls -ld */"   # List in long format, only directories
+      alias ld="ls -ld */"                  # List in long format, only directories
       alias nv="nvim"
       alias t="tmux"
       alias nnn='nnn -de'
+      alias pico='nano'
       alias lzd='lazydocker'
       alias fzf='fzf --preview="bat --color=always {}"'
       # Open multiple files in VSCode/NeoVim [Tab to select, ENTER to open in VSCode]

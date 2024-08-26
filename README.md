@@ -68,7 +68,6 @@ merge.args = ["-d"]
 
 [age]
     identity = "~/.ssh/age_key.txt"
-    recipient = "age1y6yu9gm325dpt7gccw8z0wrq2zrk9xsf2lr95kcl0a0f77mf5g3shfu2x9"
 ```
 ***Decrypt Age Key:***
 `age -d -o ~/.ssh/age_key.txt ~/.ssh/age_key.txt.enc`
