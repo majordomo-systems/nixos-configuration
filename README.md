@@ -30,7 +30,7 @@
 ```
 sudo nix-collect-garbage --delete-older-than 1d
 sudo nix-collect-garbage -d
-sudo nixos rebuild-boot
+sudo nixos-rebuild boot
 ```
 
 ######################################################################
