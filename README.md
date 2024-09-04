@@ -10,6 +10,11 @@
 
 sudo nix --extra-experimental-features nix-command --extra-experimental-features flakes run nixpkgs@git -- clone https://github.com/majordomom-systems/nixos-configuration.git
 
+***CHANGE:***
+
+1) hostname in network.nix
+2) if installing on a server use the appropriate configuration.nix and users.nix
+
 # NUbuntu Setup (NIX + Ubuntu)
 
 ***To download installation script:***
