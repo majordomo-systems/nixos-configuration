@@ -158,7 +158,6 @@
     flameshot
     dunst
     networkmanagerapplet
-    vmware-workstation
     firebase-tools
     nodenv
     nodejs

@@ -80,11 +80,11 @@
     flameshot
     dunst
     networkmanagerapplet
-    vmware-workstation
      
     # x86 systems only:
       # hyper
       # warp-terminal
+      # vmware-workstation
       # zoom-us
   ];
 }
