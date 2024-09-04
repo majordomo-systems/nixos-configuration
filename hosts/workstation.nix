@@ -80,6 +80,7 @@
     flameshot
     dunst
     networkmanagerapplet
+    vmware-workstation
      
     # x86 systems only:
       # hyper

@@ -1,8 +1,8 @@
 # nix flake update
-# nix build .#homeConfigurations.developer.activationPackage
-# nix run .#homeConfigurations.developer.activationPackage
+# nix build .#homeConfigurations.admin.activationPackage
+# nix run .#homeConfigurations.admin.activationPackage
 {
-  description = "Home Manager configuration of developer";
+  description = "Home Manager configuration of admin";
 
   inputs = {
     # Specify the source of Home Manager, Nixpkgs, and Catppuccin.
@@ -19,7 +19,7 @@
       system = "aarch64-linux";  # Adjust this to your system if needed
       pkgs = nixpkgs.legacyPackages.${system};
     in {
-      homeConfigurations."developer" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."admin" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         modules = [

@@ -17,8 +17,8 @@
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "developer";
-  home.homeDirectory = "/home/developer";
+  home.username = "admin";
+  home.homeDirectory = "/home/admin";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -112,6 +112,7 @@
     unzip
     zoxide
     neofetch
+    distrobox
     trash-cli
     speedtest-cli
     protonvpn-cli
@@ -144,6 +145,7 @@
     # flameshot
     # dunst
     # networkmanagerapplet
+    # vmware-workstation
     firebase-tools
     nodenv
     nodejs

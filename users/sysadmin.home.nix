@@ -2,16 +2,16 @@
 
 {
   imports = [
-    ../applications/zsh.nix
     ../applications/bash.nix
+    ../applications/zsh.nix
     ../applications/tmux.nix
     ../applications/tilix.nix
     ../applications/starship.nix
     # ../applications/nnn.nix
   ];
 
-  home.username = "developer";
-  home.homeDirectory = "/home/developer";
+  home.username = "admin";
+  home.homeDirectory = "/home/admin";
   home.stateVersion = "24.05";
 
   # NvChad - Basically copy the whole nvchad that is fetched from github to ~/.config/nvim

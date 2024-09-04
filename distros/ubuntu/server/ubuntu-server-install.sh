@@ -9,7 +9,7 @@
 
 # CHANGE OWNERSHIP AND PERMISSIONS OF GITHUB KEY
 cd ~/.ssh
-sudo chown developer:developer server.digitalocean_key
+sudo chown admin:admin server.digitalocean_key
 sudo chmod 600 server.digitalocean_key
 cd
 
@@ -33,7 +33,7 @@ ssh-add ~/.ssh/id_ed25519
 
 # INSTALL SYSTEM SOFTWARE
 sudo apt -y update && sudo apt -y upgrade
-sudo apt-get -y install curl wget build-essential software-properties-common python3-pip fail2ban open-vm-tools open-vm-tools-desktop
+sudo apt-get -y install curl wget build-essential software-properties-common python3-pip fail2ban
 
 ####################################################################################
 
@@ -112,7 +112,7 @@ docker run -d --expose 80 -e VIRTUAL_HOST=code.majordomo.systems -e VIRTUAL_PORT
 
 # RUN n8n Server
 docker volume create n8n_data
-docker run -v /home/developer/git/scraper:/home/node/scraper -e VIRTUAL_HOST=n8n.majordomo.systems -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n &
+docker run -v /home/admin/git/scraper:/home/node/scraper -e VIRTUAL_HOST=n8n.majordomo.systems -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n &
 
 # Create WebSSH2 Connection
 # docker run -e VIRTUAL_HOST=shell.majordomo.systems -it --rm --name webssh2 -p 2222:2222 psharkey/webssh2
@@ -131,7 +131,7 @@ Description=Start Containers
 After=network.target
 
 [Service]
-ExecStart=/home/developer/start.sh &
+ExecStart=/home/admin/start.sh &
 
 [Install]
 WantedBy=default.target
@@ -147,7 +147,7 @@ sudo systemctl start containers.service
 
 # NIX INSTALLATION
 sh <(curl -L https://nixos.org/nix/install) --no-daemon
-. /home/developer/.nix-profile/etc/profile.d/nix.sh 
+. /home/admin/.nix-profile/etc/profile.d/nix.sh 
 mkdir -p ~/.config/nix
 echo "experimental-features = nix-command flakes" | tee -a ~/.config/nix/nix.conf
 source ~/.profile
@@ -156,7 +156,7 @@ nix run nixpkgs#cowsay Nix Installation Complete!
 # NIX HOME MANAGER INSTALLATION
 nix run home-manager/master -- init --switch
 # To modify nix configuration:
-# code /home/developer/.config/home-manager/home.nix
+# code /home/admin/.config/home-manager/home.nix
 # nix run nixpkgs#home-manager -- switch
 
 # NIX HOME MANAGER CONFIGURATION
@@ -176,8 +176,8 @@ wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/mai
 rm home.nix
 wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/distros/ubuntu/server/ubuntu-server-home.nix && mv ubuntu-server-home.nix home.nix
 nix flake update
-nix build .#homeConfigurations.developer.activationPackage
-nix run .#homeConfigurations.developer.activationPackage
+nix build .#homeConfigurations.admin.activationPackage
+nix run .#homeConfigurations.admin.activationPackage
 cd
 ln -s .config/home-manager/home.nix .home.nix
 nix run nixpkgs#home-manager -- switch

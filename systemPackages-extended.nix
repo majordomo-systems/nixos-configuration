@@ -19,6 +19,7 @@
     unzip
     zoxide
     neofetch
+    distrobox
     trash-cli
     speedtest-cli
     protonvpn-cli

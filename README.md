@@ -1,3 +1,15 @@
+# New Installations
+
+***Filesystem*** - BTRFS (for snapshots)
+
+/boot - fat32 - 512MiB - flags = boot, esp - name = EFI
+
+/ - btrfs - remaining space - flags = (none) - name = root
+
+***Clone NIXos configuration repo:***
+
+sudo nix --extra-experimental-features nix-command --extra-experimental-features flakes run nixpkgs@git -- clone https://github.com/majordomom-systems/nixos-configuration.git
+
 # NUbuntu Setup (NIX + Ubuntu)
 
 ***To download installation script:***

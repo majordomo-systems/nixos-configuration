@@ -112,6 +112,7 @@
     unzip
     zoxide
     neofetch
+    distrobox
     trash-cli
     speedtest-cli
     protonvpn-cli
@@ -157,6 +158,7 @@
     flameshot
     dunst
     networkmanagerapplet
+    vmware-workstation
     firebase-tools
     nodenv
     nodejs
