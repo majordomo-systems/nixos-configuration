@@ -2,6 +2,8 @@
 
 {
   environment.systemPackages = with pkgs; [
+    
+    # BASE SYSTEM
     bash
     zsh
     tmux
@@ -40,5 +42,30 @@
     vimPlugins.poimandres-nvim
     vimPlugins.nnn-vim
     vimPlugins.nvim-treesitter
+
+    # EXTENDED SYSTEM
+    chezmoi
+    tmate
+    ntp
+    ctop
+    htop
+    btop
+    gdu
+    bottom
+    tldr
+    jq
+    duf
+    w3m
+    zip
+    gzip
+    unzip
+    zoxide
+    neofetch
+    distrobox
+    trash-cli
+    speedtest-cli
+    protonvpn-cli
+    openvpn
+    open-vm-tools
   ];
 }

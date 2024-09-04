@@ -6,8 +6,7 @@
       ./hardware-configuration.nix
       ./network.nix
       ./users.nix
-      ./systemPackages-base.nix
-      ./systemPackages-extended.nix
+      ./system-packages.nix
       ./hosts/workstation.nix
       ./hosts/server.nix
       <catppuccin/modules/nixos>

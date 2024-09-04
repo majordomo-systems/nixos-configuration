@@ -1,38 +1,18 @@
 # New Installations
 
+## NIXOS Configuration
+
 ***Filesystem*** - BTRFS (for snapshots)
 
 /boot - fat32 - 512MiB - flags = boot, esp - name = EFI
 
 / - btrfs - remaining space - flags = (none) - name = root
 
-***Clone NIXos configuration repo:***
+***1) Run installation script:***
 
-sudo nix --extra-experimental-features nix-command --extra-experimental-features flakes run nixpkgs@git -- clone https://github.com/majordomom-systems/nixos-configuration.git
-
-***CHANGE:***
-
-1) hostname in network.nix
-2) if installing on a server use the appropriate configuration.nix and users.nix
-
-# NUbuntu Setup (NIX + Ubuntu)
-
-***To download installation script:***
-```
-wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/distros/ubuntu/desktop/ubuntu-desktop-install.sh
-```
-
-# NIXOS Configuration
-
-## For NIXos Systems:
-
-***Add these channels first:***
-```
-sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-24.05.tar.gz home-manager
-sudo nix-channel --add https://github.com/catppuccin/nix/archive/main.tar.gz catppuccin
-sudo nix-channel --update
-
-```
+1) `wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/install-server.sh`
+2) `chmod 755 install-server.sh`
+3) `./install-server.sh`
 
 ***To rebuild after making changes to configurations:***
 
@@ -54,8 +34,12 @@ sudo nixos rebuild-boot
 ```
 
 ######################################################################
+## NUbuntu Configuration (NIX + Ubuntu)
 
-## For Ubuntu & NIX Systems:
+***To download installation script:***
+```
+wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/distros/ubuntu/desktop/ubuntu-desktop-install.sh
+```
 
 ***To rebuild after making changes to flake.nix/configuration:***
 ```

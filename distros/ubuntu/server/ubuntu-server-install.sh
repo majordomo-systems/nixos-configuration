@@ -53,7 +53,7 @@ cd ~/
 
 # INSTALL WALLPAPER
 # cd /usr/share/backgrounds
-# sudo wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/M3-MacBook-Pro-Wallpaper-8K.png
+# sudo wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/assets/M3-MacBook-Pro-Wallpaper-8K.png
 # gsettings set org.gnome.desktop.background picture-uri file:////usr/share/backgrounds/M3-MacBook-Pro-Wallpaper-8K.png
 # gsettings set org.gnome.desktop.background picture-uri-dark file:////usr/share/backgrounds/M3-MacBook-Pro-Wallpaper-8K.png
 
