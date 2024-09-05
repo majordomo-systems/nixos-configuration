@@ -11,7 +11,7 @@ sudo nix-channel --update
 
 # CLONE CONFIGURATION
 cd /etc/nixos
-sudo nix --extra-experimental-features nix-command --extra-experimental-features flakes run nixpkgs@git -- clone https://github.com/majordomo-systems/nixos-configuration.git
+sudo nix --extra-experimental-features nix-command --extra-experimental-features flakes run nixpkgs#git -- clone https://github.com/majordomo-systems/nixos-configuration.git
 sudo rm /etc/nixos/configuration.nix
 sudo rm /etc/nixos/nixos-configuration/configuraton.nix
 sudo rm /etc/nixos/nixos-configuration/users.nix
@@ -33,6 +33,9 @@ echo "The hostname has been updated to '$hostname' in network.nix."
 
 # REBUILD CONFIGURATION
 sudo nixos-rebuild switch
+
+# Change to dark mode
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 ####################################################################################
 

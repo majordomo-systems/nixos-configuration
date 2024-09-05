@@ -24,6 +24,20 @@
   catppuccin.flavor = "mocha";
   catppuccin.enable = true;
   # ##################################################################################### #
+  #  Enable xRDP for Remote Desktop Connections
+  services.xrdp = {
+    enable = true;
+    port = 3389;
+    openFirewall = true;
+    defaultWindowManager = "${pkgs.gnome.gnome-session}/bin/gnome-session";
+  };
+
+  # Ensure Gnome doesn't sleep/suspend/hibernate
+  systemd.targets.sleep.enable = false;
+  systemd.targets.suspend.enable = false;
+  systemd.targets.hibernate.enable = false;
+  systemd.targets.hybrid-sleep.enable = false;
+  # ##################################################################################### #
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

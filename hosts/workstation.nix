@@ -39,6 +39,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    gnome.gnome-remote-desktop
     gnome.gnome-tweaks
     gnome-extension-manager
     gnomeExtensions.quick-settings-tweaker
@@ -82,10 +83,10 @@
     networkmanagerapplet
      
     # x86 systems only:
-      # hyper
-      # warp-terminal
-      # vmware-workstation
-      # zoom-us
+    # hyper
+    # warp-terminal
+    # vmware-workstation
+    # zoom-us
   ];
 }
 
