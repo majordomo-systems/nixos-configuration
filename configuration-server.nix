@@ -37,6 +37,46 @@
   systemd.targets.suspend.enable = false;
   systemd.targets.hibernate.enable = false;
   systemd.targets.hybrid-sleep.enable = false;
+
+  # Mount exFAT drive (4tb network drive)
+  fileSystems."/mnt/network_drive" = {
+    device = "/dev/nvme0n1p1";  # or UUID
+    fsType = "exfat";
+    options = [ "uid=drive_readwrite" "gid=drive_group" "umask=0027" ];  # Adjust accordingly
+  };
+
+  services.samba = {
+    enable = true;
+    shares = {
+      "network_drive" = {
+        path = "/mnt/network_drive";
+        writable = true;
+        guestOk = false;
+        validUsers = [ "drive_readwrite" "drive_read" ];  # Allow only the two users
+        writeList = [ "drive_readwrite" ];  # Only drive_readwrite can write
+      };
+    };
+  };
+
+  virtualisation.docker.enable = true;
+
+  # NixOS as a VM HOST - if you want to run VMs from within Nix(OS).
+  # https://nixos.wiki/wiki/Virtualization
+  virtualisation.vmware.host.enable = true;
+
+  # NixOS as a VM GUEST - if you want to run this system from within a VM.
+  # https://nixos.wiki/wiki/Virtualization
+  # Enable vmware video driver for better performance:
+  # services.xserver.videoDrivers = [ "vmware" ];
+  # Enable VMWare guest tools:
+  # virtualisation.vmware.guest.enable = true;
+
+
+  # services.cockpit = {
+  #   enable = true;
+  #   package = pkgs.cockpit;
+  # };
+
   # ##################################################################################### #
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

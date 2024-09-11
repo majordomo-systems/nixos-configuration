@@ -20,6 +20,9 @@
     docker-compose
     lazydocker
     coreutils
+    exfatprogs
+    hfsprogs
+    gparted
     gcc
     xclip
     sshs

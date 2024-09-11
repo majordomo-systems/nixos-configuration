@@ -12,7 +12,7 @@
   };
 
   # Enable automatic login for the user with updated option path
-  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.enable = false;
   services.displayManager.autoLogin.user = "developer";
 
   # Workaround for GNOME autologin
@@ -24,5 +24,18 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users.developer = import ./users/engineer.home.nix;
+  };
+
+  # Create samba users for network drive access
+  users.users.drive_readwrite = {
+    isNormalUser = true;
+    home = "/home/drive_readwrite";
+    description = "User with read/write access to the shared drive";
+  };
+
+  users.users.drive_read = {
+    isNormalUser = true;
+    home = "/home/drive_read";
+    description = "User with read-only access to the shared drive";
   };
 }

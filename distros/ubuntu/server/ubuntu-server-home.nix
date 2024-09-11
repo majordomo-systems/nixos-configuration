@@ -72,6 +72,9 @@
     # docker-compose
     lazydocker
     coreutils
+    exfatprogs
+    hfsprogs
+    gparted
     gcc
     xclip
     sshs
@@ -203,6 +206,9 @@
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
+
+  # Start the Docker Daemon
+  virtualisation.docker.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

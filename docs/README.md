@@ -1,3 +1,24 @@
+# Overview
+
+## Public
+1. Production Server (Framework)
+
+## Private
+1. Server 1 - DNS Server - Raspberry Pi
+2. Server 2 - Virtualization - Mac Mini - VMWare Fusion - Application Server
+3. Server 3 - Virtualization - Mac Mini - VMWare Fusion - Development Server
+4. Server 4 - NAS - TruNas Scale/UnRAID/Synology/Ubiquiti
+
+## VLANS
+
+1. Core - Network Devices, DNS Server & Server
+2. Public - Framework Production Server
+3. Private - Virtualization Servers
+4. Main - Macbook, Tablets, etc
+5. IoT - Google Home Mini
+6. Security - Cameras, Door Access, etc
+7. Guest
+
 # New Installations
 
 ## NIXOS Configuration
