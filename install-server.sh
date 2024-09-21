@@ -66,15 +66,40 @@ chezmoi apply
 
 ####################################################################################
 
+# PUBLIC SERVER
+
 # INSTALL PORTAINER
+# https://docs.portainer.io/start/install-ce/server/docker/linux
 # connect at https://ip-address:9443 in web browser
+docker volume create portainer_data
 
 docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
 
-# Homepage Dashboard
+# INSTALL SUPABASE
+# https://supabase.com/docs/guides/self-hosting/docker
+
+# Get the code
+git clone --depth 1 https://github.com/supabase/supabase
+
+# Go to the docker folder
+cd supabase/docker
+
+# Copy the fake env vars
+cp .env.example .env
+
+# Pull the latest images
+docker compose pull
+
+# Start the services (in detached mode)
+docker compose up -d
+
+####################################################################################
+
+# PRIVATE SERVER
+
+# INSTALL HOMEPAGE DASHBOARD
 
 docker run -p 3000:3000 --name homepage -v /path/to/config:/app/config -v /var/run/docker.sock:/var/run/docker.sock ghcr.io/gethomepage/homepage:latest
 
 # INSTALL UPTIME KUMA
 docker run -d --restart=always -p 3001:3001 -v uptime-kuma:/app/data --name uptime-kuma louislam/uptime-kuma:1
-

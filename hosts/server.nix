@@ -6,7 +6,6 @@
     vmware-workstation
 
     samba
-    # cockpit
     kasmweb
   ];
 }

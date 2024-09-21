@@ -3,7 +3,9 @@
 {
   environment.systemPackages = with pkgs; [
     
-    # BASE SYSTEM
+    open-vm-tools
+    
+    # CORE SYSTEM
     bash
     zsh
     tmux
@@ -20,15 +22,18 @@
     docker-compose
     lazydocker
     coreutils
-    exfatprogs
-    hfsprogs
-    gparted
-    gcc
-    xclip
     sshs
     openssh
     openssl
     portal
+    tldr
+    xclip
+
+    # BASE SYSTEM
+    exfatprogs
+    hfsprogs
+    gparted
+    gcc
     ccrypt
     age
     yazi
@@ -55,7 +60,6 @@
     btop
     gdu
     bottom
-    tldr
     jq
     duf
     w3m
@@ -69,6 +73,5 @@
     speedtest-cli
     protonvpn-cli
     openvpn
-    open-vm-tools
   ];
 }
