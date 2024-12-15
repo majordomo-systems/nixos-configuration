@@ -70,7 +70,8 @@ nix run home-manager/master -- init --switch
 
 # NIX HOME MANAGER CONFIGURATION
 
-nix-channel --add https://github.com/nix-community/home-manager/archive/release-24.05.tar.gz home-manager
+sudo nix-channel --add https://nixos.org/channels/nixos-24.11 nixos
+sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-24.11.tar.gz home-manager
 nix-channel --add https://github.com/catppuccin/nix/archive/main.tar.gz catppuccin
 nix-channel --update
 mkdir -p ~/.config/home-manager/apps

@@ -5,8 +5,8 @@
 
 ## Private
 1. Server 1 - DNS Server - Raspberry Pi
-2. Server 2 - Virtualization - Mac Mini - VMWare Fusion - Application Server
-3. Server 3 - Virtualization - Mac Mini - VMWare Fusion - Development Server
+2. Server 2 - Virtualization - Framework/Mac Mini - VMWare Fusion - Application Server
+3. Server 3 - Virtualization - Framework/Mac Mini - VMWare Fusion - Development Server
 4. Server 4 - NAS - TruNas Scale/UnRAID/Synology/Ubiquiti
 
 ## VLANS
@@ -34,6 +34,15 @@
 1) `wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/install-server.sh`
 2) `chmod 755 install-server.sh`
 3) `./install-server.sh`
+
+***Add these channels first:***
+```
+sudo nix-channel --add https://nixos.org/channels/nixos-24.11 nixos
+sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-24.11.tar.gz home-manager
+sudo nix-channel --add https://github.com/catppuccin/nix/archive/main.tar.gz catppuccin
+sudo nix-channel --update
+
+```
 
 ***To rebuild after making changes to configurations:***
 
