@@ -50,6 +50,7 @@
     vimPlugins.poimandres-nvim
     vimPlugins.nnn-vim
     vimPlugins.nvim-treesitter
+    vimPlugins.avante-nvim
 
     # EXTENDED SYSTEM
     chezmoi

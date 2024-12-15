@@ -25,4 +25,17 @@
     useUserPackages = true;
     users.admin = import ./users/sysadmin.home.nix;
   };
+
+  # Create samba users for network drive access
+  users.users.drive_readwrite = {
+    isNormalUser = true;
+    home = "/home/drive_readwrite";
+    description = "User with read/write access to the shared drive";
+  };
+
+  users.users.drive_read = {
+    isNormalUser = true;
+    home = "/home/drive_read";
+    description = "User with read-only access to the shared drive";
+  };
 }

@@ -12,7 +12,7 @@
 
   home.username = "developer";
   home.homeDirectory = "/home/developer";
-  home.stateVersion = "24.05";
+  home.stateVersion = "24.11";
 
   # NvChad - Basically copy the whole nvchad that is fetched from github to ~/.config/nvim
   xdg.configFile."nvim/" = {

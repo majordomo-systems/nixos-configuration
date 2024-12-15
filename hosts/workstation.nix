@@ -39,8 +39,8 @@
   };
 
   environment.systemPackages = with pkgs; [
+    gnome-tweaks
     gnome.gnome-remote-desktop
-    gnome.gnome-tweaks
     gnome-extension-manager
     gnomeExtensions.quick-settings-tweaker
     gnomeExtensions.quick-settings-audio-panel
@@ -68,7 +68,7 @@
     # gnomeExtensions.transparent-top-bar-adjustable-transparency
     github-desktop
     tilix
-    alacritty
+    warp-terminal
     brave
     firefox
     firefox-devedition
@@ -84,7 +84,6 @@
      
     # x86 systems only:
     # hyper
-    # warp-terminal
     # vmware-workstation
     # zoom-us
   ];
