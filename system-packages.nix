@@ -4,44 +4,42 @@
   environment.systemPackages = with pkgs; [
     
     open-vm-tools
-    
+    coreutils
+    exfatprogs
+    hfsprogs
+    gparted
+    distrobox
+    protonvpn-cli
+    # mkalias
+
     # CORE SYSTEM
-    bash
+    bash   
     zsh
-    tmux
-    fd
-    bat
+    gcc
+    sshs
+    openssh
+    openssl
+    direnv 
+    ccrypt
+    age   
+    tmux  
+    fd  
+    bat 
     fzf
     wget
     curl
     ripgrep
-    git
+    git   
     gh
-    lazygit
+    lazygit  
     docker
     docker-compose
     lazydocker
-    coreutils
-    sshs
-    openssh
-    openssl
-    portal
     tldr
     xclip
+    portal
 
-    # BASE SYSTEM
-    exfatprogs
-    hfsprogs
-    gparted
-    gcc
-    ccrypt
-    age
-    yazi
-    starship
-    catppuccin
-    imagemagick
-    ffmpegthumbnailer
-    poppler
+    # EXTENDED SYSTEM
     neovim
     vimPlugins.nvchad
     vimPlugins.nvchad-ui
@@ -50,29 +48,32 @@
     vimPlugins.poimandres-nvim
     vimPlugins.nnn-vim
     vimPlugins.nvim-treesitter
-    vimPlugins.avante-nvim
-
-    # EXTENDED SYSTEM
+    vimPlugins.avante-nvim  
     chezmoi
+    starship
+    catppuccin
+    imagemagick
+    ffmpegthumbnailer
+    poppler
+    yazi
     tmate
-    ntp
-    ctop
-    htop
-    btop
     gdu
     bottom
-    jq
+    tldr
+    jq  
     duf
-    w3m
-    zip
-    gzip
-    unzip
+    w3m 
+    zip 
+    gzip   
+    unzip  
     zoxide
     neofetch
-    distrobox
     trash-cli
     speedtest-cli
-    protonvpn-cli
     openvpn
+    ntp
+    ctop
+    htop 
+    btop
   ];
 }

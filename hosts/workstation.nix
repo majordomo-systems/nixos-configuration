@@ -40,7 +40,7 @@
 
   environment.systemPackages = with pkgs; [
     gnome-tweaks
-    gnome.gnome-remote-desktop
+    gnome-remote-desktop
     gnome-extension-manager
     gnomeExtensions.quick-settings-tweaker
     gnomeExtensions.quick-settings-audio-panel
