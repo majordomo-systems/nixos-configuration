@@ -6,6 +6,8 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    # For Darwin:
+    # interactiveShellInit = ''
     initExtra = ''
 
       # set a fancy prompt (non-color, unless we know we "want" color)
