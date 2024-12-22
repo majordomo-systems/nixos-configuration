@@ -3,8 +3,8 @@
 
 {
   imports = [
-    # ./apps/bash.nix
-    # ./apps/zsh.nix
+    ./apps/bash.nix
+    ./apps/zsh.nix
     ./apps/tmux.nix
     ./apps/tilix.nix
   ];
@@ -29,10 +29,10 @@
   # release notes.
   home.stateVersion = "24.05"; # Please read the comment before changing.
 
-  # NvChad - Basically copy the whole nvchad that is fetched from github to ~/.config/nvim
-  xdg.configFile."nvim/" = {
-    source = (pkgs.callPackage ./apps/nvchad.nix{}).nvchad;
-  };
+  # NvChad - Basically copy the whole nvchad that is fetched from github to ~/.config/nvim - if commented out, configuration is being managed by chezmoi
+  # xdg.configFile."nvim/" = {
+  #   source = (pkgs.callPackage ./apps/nvchad.nix{}).nvchad;
+  # };
 
   nixpkgs.config.allowUnfree = true;
 
@@ -84,7 +84,7 @@
     ccrypt
     age
     yazi
-    # starship
+    starship
     catppuccin
     imagemagick
     ffmpegthumbnailer
@@ -92,11 +92,6 @@
     neovim
     vimPlugins.nvchad
     vimPlugins.nvchad-ui
-    # vimPlugins.LazyVim
-    # vimPlugins.catppuccin-nvim
-    # vimPlugins.poimandres-nvim
-    # vimPlugins.nnn-vim
-    # vimPlugins.nvim-treesitter
     # open-vm-tools
     chezmoi
     tmate
