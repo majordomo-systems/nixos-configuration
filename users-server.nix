@@ -23,7 +23,7 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.admin = import ./users/sysadmin.home.nix;
+    users.admin = import ./users/admin.home.nix;
   };
 
   # Create samba users for network drive access
