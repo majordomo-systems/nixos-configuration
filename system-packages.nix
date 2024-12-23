@@ -41,8 +41,8 @@
 
     # EXTENDED SYSTEM
     neovim
-    # vimPlugins.nvchad
-    # vimPlugins.nvchad-ui
+    vimPlugins.nvchad
+    vimPlugins.nvchad-ui
     # vimPlugins.LazyVim
     # vimPlugins.catppuccin-nvim
     # vimPlugins.poimandres-nvim
