@@ -6,9 +6,7 @@
       ./hardware-configuration.nix
       ./network.nix
       ./users.nix
-      ./system-packages.nix
-      ./hosts/workstation.nix
-      # ./hosts/server.nix
+      ./packages.nix
       <catppuccin/modules/nixos>
       <home-manager/nixos>
     ];
@@ -89,4 +87,23 @@
 
   programs.direnv.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # ##################################################################################### #
+
+  # Enable the X11 windowing system and GNOME.
+  services.xserver = {
+    enable = true;
+
+    # Updated layout and variant options
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
+
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+  };
+
+  # Enable touchpad support (enabled default in most desktopManager).
+  # services.xserver.libinput.enable = true;
 }
