@@ -56,66 +56,100 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
 
-    bash
-    zsh
-    tmux
-    fd
-    bat
-    fzf
-    wget
-    curl
-    ripgrep
-    git
-    gh
-    lazygit
-    # docker
-    # docker-compose
-    lazydocker
+    # FONTS
+    #corefonts # Microsoft fonts
+    ubuntu_font_family
+    nerdfonts
+    fira
+    fira-mono
+    fira-code
+    fira-code-nerdfont
+    source-code-pro
+    open-sans
+    font-awesome
+    
+    # OS Specific
+    # mkalias # Required for Mac/Darwin installations
+    # open-vm-tools
     coreutils
     exfatprogs
     hfsprogs
     gparted
+    distrobox
+    protonvpn-cli
+
+    # CORE SYSTEM
+    bash   
+    zsh
     gcc
-    xclip
     sshs
     openssh
     openssl
-    portal
+    direnv 
     ccrypt
-    age
-    yazi
+    age   
+    tmux  
+    fd  
+    bat 
+    fzf
+    wget
+    curl
+    ripgrep
+    git   
+    gh
+    lazygit  
+    # docker
+    # docker-compose
+    # lazydocker
+    tldr
+    xclip
+    portal
+
+    # EXTENDED SYSTEM
+    neovim
+    vimPlugins.nvchad
+    vimPlugins.nvchad-ui
+    # vimPlugins.LazyVim
+    # vimPlugins.catppuccin-nvim
+    # vimPlugins.poimandres-nvim
+    # vimPlugins.nnn-vim
+    # vimPlugins.nvim-treesitter
+    # vimPlugins.avante-nvim  
+    chezmoi
     starship
     catppuccin
     imagemagick
     ffmpegthumbnailer
     poppler
-    neovim
-    vimPlugins.nvchad
-    vimPlugins.nvchad-ui
-    # open-vm-tools
-    chezmoi
+    yazi
     tmate
-    ntp
-    ctop
-    htop
-    btop
     gdu
     bottom
     tldr
-    jq
+    jq  
     duf
-    w3m
-    zip
-    gzip
-    unzip
+    w3m 
+    zip 
+    gzip   
+    unzip  
     zoxide
     neofetch
-    distrobox
     trash-cli
     speedtest-cli
-    protonvpn-cli
     openvpn
+    ntp
+    ctop
+    htop 
+    btop
+
+    # SERVER
+    # vmware-workstation
+    # samba
+    # kasmweb
+
+    # WORKSTATION
     gnome-tweaks
+    gnome-remote-desktop
     gnome-extension-manager
     gnomeExtensions.quick-settings-tweaker
     gnomeExtensions.quick-settings-audio-panel
@@ -141,41 +175,28 @@
     # gnomeExtensions.logo-menu
     # gnomeExtensions.top-bar-organizer
     # gnomeExtensions.transparent-top-bar-adjustable-transparency
-    # github-desktop
-    # tilix
-    # alacritty
-    # brave
-    # firefox
-    # firefox-devedition
+    github-desktop
+    tilix
+    alacritty
+    warp-terminal
+    brave
+    firefox
+    firefox-devedition
     # chromium
-    # ungoogled-chromium
-    # vscode
+    ungoogled-chromium
+    vscode
+    # (import <nixos-unstable> {}).vscode
     protonvpn-gui
     pavucontrol
     timeshift
     flameshot
     dunst
     networkmanagerapplet
-    firebase-tools
-    nodenv
-    nodejs
-    nodePackages.npm
-    nodePackages.pnpm
-    electron
-    # python3
-    go
-    hugo
-
-    # FONTS
-    # corefonts
-    nerdfonts
-    fira
-    fira-mono
-    fira-code
-    fira-code-nerdfont
-    source-code-pro
-    open-sans
-    font-awesome
+     
+    # x86 systems only:
+    # hyper
+    # vmware-workstation
+    # zoom-us
   ];
 
   # fonts.fontconfig.enable = true;
