@@ -109,12 +109,6 @@
     neovim
     vimPlugins.nvchad
     vimPlugins.nvchad-ui
-    # vimPlugins.LazyVim
-    # vimPlugins.catppuccin-nvim
-    # vimPlugins.poimandres-nvim
-    # vimPlugins.nnn-vim
-    # vimPlugins.nvim-treesitter
-    # vimPlugins.avante-nvim  
     chezmoi
     starship
     catppuccin
@@ -141,7 +135,7 @@
     ctop
     htop 
     btop
-    # distrobox
+    glow
 
     # SERVER
     # vmware-workstation
@@ -176,6 +170,7 @@
     # gnomeExtensions.logo-menu
     # gnomeExtensions.top-bar-organizer
     # gnomeExtensions.transparent-top-bar-adjustable-transparency
+    networkmanagerapplet
     github-desktop
     tilix
     alacritty
@@ -192,7 +187,7 @@
     timeshift
     flameshot
     dunst
-    networkmanagerapplet
+    obsidian
      
     # x86 systems only:
     # hyper

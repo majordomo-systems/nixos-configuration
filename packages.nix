@@ -23,6 +23,8 @@
   
   environment.systemPackages = with pkgs; [
     
+    # OS Specific
+    # mkalias # Required for Mac/Darwin installations
     open-vm-tools
     coreutils
     exfatprogs
@@ -30,7 +32,6 @@
     gparted
     distrobox
     protonvpn-cli
-    # mkalias
 
     # CORE SYSTEM
     bash   
@@ -63,12 +64,6 @@
     neovim
     vimPlugins.nvchad
     vimPlugins.nvchad-ui
-    # vimPlugins.LazyVim
-    # vimPlugins.catppuccin-nvim
-    # vimPlugins.poimandres-nvim
-    # vimPlugins.nnn-vim
-    # vimPlugins.nvim-treesitter
-    # vimPlugins.avante-nvim  
     chezmoi
     starship
     catppuccin
@@ -95,6 +90,7 @@
     ctop
     htop 
     btop
+    glow
 
     # SERVER
     # vmware-workstation
@@ -129,6 +125,7 @@
     # gnomeExtensions.logo-menu
     # gnomeExtensions.top-bar-organizer
     # gnomeExtensions.transparent-top-bar-adjustable-transparency
+    networkmanagerapplet
     github-desktop
     tilix
     warp-terminal
@@ -144,7 +141,7 @@
     timeshift
     flameshot
     dunst
-    networkmanagerapplet
+    obsidian
      
     # x86 systems only:
     # hyper

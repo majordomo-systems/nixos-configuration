@@ -17,6 +17,8 @@
       # List packages installed in system profile
       environment.systemPackages = with pkgs; [
 
+        # OS Specific
+        mkalias # Required for Mac/Darwin installations
         # open-vm-tools
         # coreutils
         # exfatprogs
@@ -24,7 +26,6 @@
         # gparted
         # distrobox
         # protonvpn-cli
-        mkalias
 
         # CORE SYSTEM
         bash   
@@ -89,6 +90,7 @@
         ctop
         htop 
         btop
+        glow
       ];
 
       # Copy NvChad to ~/.config/nvim
