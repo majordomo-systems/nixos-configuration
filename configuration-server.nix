@@ -19,8 +19,8 @@
       <catppuccin/modules/home-manager>
     ];
   };
-  catppuccin.flavor = "mocha";
   catppuccin.enable = true;
+  catppuccin.flavor = "mocha";
   # ##################################################################################### #
   #  Enable xRDP for Remote Desktop Connections
   services.xrdp = {
