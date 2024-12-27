@@ -28,8 +28,8 @@
         # protonvpn-cli
 
         # CORE SYSTEM
-        bash   
         zsh
+        zsh-vi-mode
         gcc
         sshs
         openssh
