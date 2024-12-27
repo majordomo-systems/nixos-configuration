@@ -58,12 +58,6 @@
         neovim
         vimPlugins.nvchad
         vimPlugins.nvchad-ui
-        vimPlugins.LazyVim
-        vimPlugins.catppuccin-nvim
-        vimPlugins.poimandres-nvim
-        vimPlugins.nnn-vim
-        vimPlugins.nvim-treesitter
-        vimPlugins.avante-nvim  
         chezmoi
         starship
         catppuccin
@@ -142,7 +136,6 @@
     darwinConfigurations."MacBook-Pro-M3-Max" = nix-darwin.lib.darwinSystem {
       modules = [
         configuration
-        ./zsh.nix
       ];
     };
   };

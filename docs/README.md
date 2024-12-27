@@ -83,6 +83,12 @@ nix run .#homeConfigurations.developer.activationPackage
 `nix run nixpkgs#home-manager -- switch`
 
 ######################################################################
+## Darwin/Mac Configuration
+
+***To rebuild after making changes to flake:***
+`darwin-rebuild switch --flake ~/.config/nix`
+
+######################################################################
 
 ## Dotfiles & SSH Keys
 
