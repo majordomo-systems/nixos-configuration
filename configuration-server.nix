@@ -88,9 +88,16 @@
   # ##################################################################################### #
   # Ensure Zsh is listed in /etc/shells
   programs.zsh.enable = true;
+
+  # users.users.developer.shell = pkgs.zsh;
+  # environment.shells = with pkgs; [ zsh ];
+  # users.defaultUserShell=pkgs.zsh;
   # ##################################################################################### #
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  # ##################################################################################### #
+  # Enable touchpad support (enabled default in most desktopManager).
+  services.libinput.enable = true;
   # ##################################################################################### #
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
@@ -125,25 +132,18 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "24.05"; # Did you read the comment?
   # ##################################################################################### #
-
   # Enable automatic upgrades
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = true;
-
   # ##################################################################################### #
-
-  # users.users.developer.shell = pkgs.zsh;
-  # environment.shells = with pkgs; [ zsh ];
-
-  # users.defaultUserShell=pkgs.zsh;
-
+  # Enable direnv
   programs.direnv.enable = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
   # ##################################################################################### #
-
+  # Enable flakes and experimental features
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  # ##################################################################################### #
   # Enable the X11 windowing system and GNOME.
   services.xserver = {
     enable = true;
@@ -157,7 +157,5 @@
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
   };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  # ##################################################################################### #
 }
