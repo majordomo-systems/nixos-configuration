@@ -37,7 +37,9 @@
     bash   
     zsh
     zsh-vi-mode
+    nushell
     gcc
+    make
     sshs
     openssh
     openssl
