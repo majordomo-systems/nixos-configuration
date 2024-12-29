@@ -65,8 +65,6 @@
 
     # EXTENDED SYSTEM
     neovim
-    vimPlugins.nvchad
-    vimPlugins.nvchad-ui
     chezmoi
     starship
     catppuccin
