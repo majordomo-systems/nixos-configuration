@@ -83,7 +83,7 @@
     zsh-vi-mode
     nushell
     gcc
-    make
+    gnumake
     sshs
     openssh
     openssl
