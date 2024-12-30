@@ -32,12 +32,12 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
   # ##################################################################################### #
-  # Ensure Zsh is listed in /etc/shells
-  programs.zsh.enable = true;
-
+  # Set default shell to zsh for all users
+  environment.shells = with pkgs; [ zsh ];
+  users.defaultUserShell=pkgs.zsh;
+  # ##################################################################################### #
+  # Set default shell to zsh for specific user only
   # users.users.developer.shell = pkgs.zsh;
-  # environment.shells = with pkgs; [ zsh ];
-  # users.defaultUserShell=pkgs.zsh;
   # ##################################################################################### #
   # Enable CUPS to print documents.
   services.printing.enable = true;
