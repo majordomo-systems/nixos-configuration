@@ -7,6 +7,7 @@
       ./network.nix
       ./users.nix
       ./packages.nix
+      ./packages-unstable.nix
       <catppuccin/modules/nixos>
       <home-manager/nixos>
     ];
