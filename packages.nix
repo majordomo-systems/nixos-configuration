@@ -145,7 +145,7 @@
     obsidian
      
     # x86 systems only:
-    # cursor
+    # code-cursor
     # hyper
     # vmware-workstation
     # zoom-us
