@@ -190,6 +190,7 @@
     obsidian
      
     # x86 systems only:
+    # cursor
     # hyper
     # vmware-workstation
     # zoom-us
