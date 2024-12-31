@@ -4,7 +4,7 @@
 
 # INSTALL SYSTEM SOFTWARE
 sudo apt -y update && sudo apt -y upgrade
-sudo apt-get -y install curl build-essential software-properties-common python3-pip alacritty chromium tilix open-vm-tools open-vm-tools-desktop
+sudo apt-get -y install curl build-essential software-properties-common python3-pip alacritty ghostty tilix chromium open-vm-tools open-vm-tools-desktop
 
 ####################################################################################
 
