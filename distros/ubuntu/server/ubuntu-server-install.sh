@@ -39,9 +39,6 @@ sudo apt-get -y install curl wget build-essential software-properties-common pyt
 
 # INITIAL CLEANUP & SETUP
 cd ~/
-wget https://majordomo-dotfiles.web.app/gitconfig && mv gitconfig .gitconfig
-wget https://majordomo-dotfiles.web.app/gitignore && mv gitignore .gitignore
-wget https://majordomo-dotfiles.web.app/gitignore_global && mv gitignore_global .gitignore_global
 rm *
 rm -Rf Music Pictures Videos Templates
 mkdir git
