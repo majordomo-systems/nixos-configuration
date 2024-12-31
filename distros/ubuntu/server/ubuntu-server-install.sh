@@ -157,16 +157,14 @@ nix run home-manager/master -- init --switch
 # nix run nixpkgs#home-manager -- switch
 
 # NIX HOME MANAGER CONFIGURATION
-nix-channel --add https://github.com/nix-community/home-manager/archive/release-24.05.tar.gz home-manager
+nix-channel --add https://nixos.org/channels/nixos-24.11 nixos
+nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
+nix-channel --add https://github.com/nix-community/home-manager/archive/release-24.11.tar.gz home-manager
 nix-channel --add https://github.com/catppuccin/nix/archive/main.tar.gz catppuccin
 nix-channel --update
 mkdir -p ~/.config/home-manager/apps
 cd ~/.config/home-manager/apps
-wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/applications/bash.nix
-wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/applications/nvchad.nix
 wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/applications/tilix.nix
-wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/applications/tmux.nix
-wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/applications/zsh.nix
 cd ~/.config/home-manager
 rm flake.nix
 wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/distros/ubuntu/server/ubuntu-server-flake.nix && mv ubuntu-server-flake.nix flake.nix
