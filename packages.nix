@@ -72,6 +72,7 @@
     ffmpegthumbnailer
     poppler
     yazi
+    navi
     tmate
     gdu
     bottom
