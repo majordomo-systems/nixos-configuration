@@ -86,7 +86,7 @@ nix run .#homeConfigurations.developer.activationPackage
 ## Darwin/Mac Configuration
 
 1. [Installing Nix & Nix Darwin](https://www.youtube.com/watch?v=Z8BL8mdzWHI)
-2. [Configuring Nix Darwin](https://www.youtube.com/watch?v=k9yKm_k5cVA&t=15s)
+2. [Configuring Nix Darwin](https://www.youtube.com/watch?v=iU7B76NTr2I)
 3. [Nix Darwin Repo](https://github.com/LnL7/nix-darwin)
 
 ***To rebuild after making changes to flake:***
