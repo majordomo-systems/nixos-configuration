@@ -13,11 +13,5 @@
   home.username = "admin";
   home.homeDirectory = "/home/admin";
   home.stateVersion = "24.11";
-
-  # NvChad - Basically copy the whole nvchad that is fetched from github to ~/.config/nvim
-  # xdg.configFile."nvim/" = {
-  #   source = (pkgs.callPackage ../applications/nvchad.nix{}).nvchad;
-  # };
-
   home.packages = with pkgs; [];
 }

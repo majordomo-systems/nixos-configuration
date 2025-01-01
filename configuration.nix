@@ -33,6 +33,9 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
   # ##################################################################################### #
+  # Ensure Zsh is listed in /etc/shells
+  programs.zsh.enable = true;
+  # ##################################################################################### #
   # Set default shell to zsh for all users
   environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell=pkgs.zsh;
@@ -79,7 +82,7 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.11"; # Did you read the comment?
   # ##################################################################################### #
   # Enable automatic upgrades
   system.autoUpgrade.enable = true;

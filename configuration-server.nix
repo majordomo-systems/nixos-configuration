@@ -39,19 +39,20 @@
 
   # Mount exFAT drive (4tb network drive)
   fileSystems."/mnt/network_drive" = {
-    device = "/dev/nvme0n1p1";  # or UUID
-    fsType = "exfat";
-    options = [ "uid=drive_readwrite" "gid=drive_group" "umask=0027" ];  # Adjust accordingly
+    device = "/dev/nvme0n1p1";  # Replace with the correct partition or UUID
+    # device = "69fd2e4c-83c3-45ae-b6a4-8e68a5ae7724";
+    fsType = "btrfs";
+    options = [ "defaults" ];  # You can customize options if needed
   };
 
   services.samba = {
     enable = true;
-    shares = {
+    settings = {
       "network_drive" = {
         path = "/mnt/network_drive";
         writable = true;
-        guestOk = false;
-        validUsers = [ "drive_readwrite" "drive_read" ];  # Allow only the two users
+        guestOk = false;  # No guest access
+        validUsers = [ "drive_readwrite" "drive_read" ];  # Only these users can access
         writeList = [ "drive_readwrite" ];  # Only drive_readwrite can write
       };
     };
@@ -69,13 +70,28 @@
   # services.xserver.videoDrivers = [ "vmware" ];
   # Enable VMWare guest tools:
   # virtualisation.vmware.guest.enable = true;
-
+  
+  # systemd.services.vm-autostart = {
+  #  description = "Start VMWare Workstation VMs at boot";
+  #   after = [ "network.target" ];
+  #   wantedBy = [ "multi-user.target" ];
+  #   serviceConfig = {
+  #     ExecStart = [
+  #       "/run/current-system/sw/bin/vmrun start /home/admin/vmware/private/Private.vmx nogui"
+  #       "/run/current-system/sw/bin/vmrun start /home/admin/vmware/public/Public.vmx nogui"
+  #     ];
+  #     ExecStop = [
+  #       "/run/current-system/sw/bin/vmrun stop /home/admin/vmware/private/Private.vmx"
+  #       "/run/current-system/sw/bin/vmrun stop /home/admin/vmware/public/Public.vmx"
+  #     ];
+  #     Restart = "on-failure";
+  #   };
+  # };
 
   # services.cockpit = {
   #   enable = true;
   #   package = pkgs.cockpit;
   # };
-
   # ##################################################################################### #
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -86,6 +102,9 @@
   # ##################################################################################### #
   # Select internationalisation properties.
   i18n.defaultLocale = "en_CA.UTF-8";
+  # ##################################################################################### #
+  # Ensure Zsh is listed in /etc/shells
+  programs.zsh.enable = true;
   # ##################################################################################### #
   # Set default shell to zsh for all users
   environment.shells = with pkgs; [ zsh ];
@@ -133,7 +152,7 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.11"; # Did you read the comment?
   # ##################################################################################### #
   # Enable automatic upgrades
   system.autoUpgrade.enable = true;
