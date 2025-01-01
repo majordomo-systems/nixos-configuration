@@ -88,9 +88,6 @@
         glow
       ];
 
-      # Copy NvChad to ~/.config/nvim
-      environment.etc."nvim".source = (pkgs.callPackage ./nvchad.nix {}).nvchad;
-
       # Activation script to add nix GUI Apps to Spotlight
       system.activationScripts.applications.text = let
         env = pkgs.buildEnv {
