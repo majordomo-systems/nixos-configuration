@@ -4,7 +4,7 @@
 
 # INSTALL SYSTEM SOFTWARE
 sudo apt -y update && sudo apt -y upgrade
-sudo apt-get -y install curl build-essential software-properties-common python3-pip alacritty ghostty tilix chromium open-vm-tools open-vm-tools-desktop
+sudo apt-get -y install curl wget build-essential software-properties-common python3-pip ghostty tilix chromium open-vm-tools open-vm-tools-desktop
 
 ####################################################################################
 
@@ -62,33 +62,12 @@ echo "experimental-features = nix-command flakes" | tee -a ~/.config/nix/nix.con
 source ~/.profile
 nix run nixpkgs#cowsay Nix Installation Complete!
 
-# NIX HOME MANAGER INSTALLATION
-nix run home-manager/master -- init --switch
-# To modify nix configuration:
-# code /home/developer/.config/home-manager/home.nix
-# nix run nixpkgs#home-manager -- switch
-
-# NIX HOME MANAGER CONFIGURATION
-
-sudo nix-channel --add https://nixos.org/channels/nixos-24.11 nixos
-sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
-sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-24.11.tar.gz home-manager
-nix-channel --add https://github.com/catppuccin/nix/archive/main.tar.gz catppuccin
-nix-channel --update
-mkdir -p ~/.config/home-manager/apps
-cd ~/.config/home-manager/apps
-wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/applications/tilix.nix
-cd ~/.config/home-manager
-rm flake.nix
-wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/distros/ubuntu/desktop/ubuntu-desktop-flake.nix && mv ubuntu-desktop-flake.nix flake.nix
-rm home.nix
-wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/distros/ubuntu/desktop/ubuntu-desktop-home.nix && mv ubuntu-desktop-home.nix home.nix
+# NIX CONFIGURATION
+cd ~/.config/nix/
+wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/distros/ubuntu/desktop/flake.nix
 nix flake update
 nix build .#homeConfigurations.developer.activationPackage
 nix run .#homeConfigurations.developer.activationPackage
-cd
-ln -s .config/home-manager/home.nix .home.nix
-nix run nixpkgs#home-manager -- switch
 
 ####################################################################################
 

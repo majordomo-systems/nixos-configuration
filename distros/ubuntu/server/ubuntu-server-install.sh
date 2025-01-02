@@ -150,32 +150,12 @@ echo "experimental-features = nix-command flakes" | tee -a ~/.config/nix/nix.con
 source ~/.profile
 nix run nixpkgs#cowsay Nix Installation Complete!
 
-# NIX HOME MANAGER INSTALLATION
-nix run home-manager/master -- init --switch
-# To modify nix configuration:
-# code /home/admin/.config/home-manager/home.nix
-# nix run nixpkgs#home-manager -- switch
-
-# NIX HOME MANAGER CONFIGURATION
-nix-channel --add https://nixos.org/channels/nixos-24.11 nixos
-nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable
-nix-channel --add https://github.com/nix-community/home-manager/archive/release-24.11.tar.gz home-manager
-nix-channel --add https://github.com/catppuccin/nix/archive/main.tar.gz catppuccin
-nix-channel --update
-mkdir -p ~/.config/home-manager/apps
-cd ~/.config/home-manager/apps
-wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/applications/tilix.nix
-cd ~/.config/home-manager
-rm flake.nix
-wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/distros/ubuntu/server/ubuntu-server-flake.nix && mv ubuntu-server-flake.nix flake.nix
-rm home.nix
-wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/distros/ubuntu/server/ubuntu-server-home.nix && mv ubuntu-server-home.nix home.nix
+# NIX CONFIGURATION
+cd ~/.config/nix/
+wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/distros/ubuntu/server/flake.nix
 nix flake update
-nix build .#homeConfigurations.admin.activationPackage
-nix run .#homeConfigurations.admin.activationPackage
-cd
-ln -s .config/home-manager/home.nix .home.nix
-nix run nixpkgs#home-manager -- switch
+nix build .#homeConfigurations.developer.activationPackage
+nix run .#homeConfigurations.developer.activationPackage
 
 ####################################################################################
 
