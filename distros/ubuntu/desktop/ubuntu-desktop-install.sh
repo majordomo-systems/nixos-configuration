@@ -11,6 +11,7 @@ sudo apt-get -y install curl wget build-essential software-properties-common pyt
 # INITIAL CLEANUP
 cd ~/
 rm -Rf Music Pictures Videos Templates
+mkdir git
 
 # INSTALL WALLPAPER
 cd /usr/share/backgrounds
