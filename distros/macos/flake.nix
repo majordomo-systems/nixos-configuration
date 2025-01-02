@@ -1,5 +1,10 @@
+# ---------------------------------------------------------------------------------
+# To rebuild after making changes to flake:
+#   darwin-rebuild switch --flake ~/.config/nix
+# ---------------------------------------------------------------------------------
+
 {
-  description = "Example nix-darwin system flake with Home Manager";
+  description = "Nix-Darwin System Flake with Home Manager";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -18,13 +23,10 @@
       environment.systemPackages = with pkgs; [
 
         # OS Specific
-        mkalias # Required for Mac/Darwin installations
-        # open-vm-tools
+        mkalias # For Mac/Darwin installations
         # coreutils
-        # exfatprogs
-        # hfsprogs
-        # gparted
         # distrobox
+        # open-vm-tools
         # protonvpn-cli
 
         # CORE SYSTEM

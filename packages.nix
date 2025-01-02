@@ -24,13 +24,10 @@
   environment.systemPackages = with pkgs; [
     
     # OS Specific
-    # mkalias # Required for Mac/Darwin installations
-    open-vm-tools
+    # mkalias # For Mac/Darwin installations
     coreutils
-    exfatprogs
-    hfsprogs
-    gparted
     distrobox
+    open-vm-tools
     protonvpn-cli
 
     # CORE SYSTEM
@@ -94,11 +91,6 @@
     btop
     glow
 
-    # SERVER
-    # vmware-workstation
-    # samba
-    # kasmweb
-
     # WORKSTATION
     gnome-tweaks
     gnome-remote-desktop
@@ -144,8 +136,16 @@
     flameshot
     dunst
     obsidian
+
+    # BARE METAL SERVER
+    # exfatprogs
+    # hfsprogs
+    # gparted
+    # samba
+    # kasmweb
+    # vmware-workstation
      
-    # x86 systems only:
+    # x86 SYSTEMS ONLY:
     # code-cursor
     # hyper
     # vmware-workstation
