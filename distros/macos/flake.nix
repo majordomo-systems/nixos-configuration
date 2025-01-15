@@ -66,9 +66,10 @@
         imagemagick
         ffmpegthumbnailer
         poppler
+        tmate
         yazi
         navi
-        tmate
+        llm
         gdu
         bottom
         tldr
