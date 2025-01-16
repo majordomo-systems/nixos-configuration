@@ -105,6 +105,9 @@
   # ##################################################################################### #
   # Ensure Zsh is listed in /etc/shells
   programs.zsh.enable = true;
+  programs.zsh.enableCompletion = true;  
+  programs.zsh.autosuggestions.enable = true;
+  programs.zsh.syntaxHighlighting.enable = true;
   # ##################################################################################### #
   # Set default shell to zsh for all users
   environment.shells = with pkgs; [ zsh ];
