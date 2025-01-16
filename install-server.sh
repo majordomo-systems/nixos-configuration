@@ -52,6 +52,7 @@ merge.args = ["-d"]
 
 [age]
     identity = "~/.ssh/age_key.txt"
+    recipients = ["age1y6yu9gm325dpt7gccw8z0wrq2zrk9xsf2lr95kcl0a0f77mf5g3shfu2x9"]
 EOF
 
 # Decrypt Age Key - password hint: the street you grew up on
