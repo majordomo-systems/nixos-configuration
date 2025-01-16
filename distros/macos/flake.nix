@@ -119,7 +119,17 @@
       programs.direnv.enable = true;
 
       # Ensure Zsh is listed in /etc/shells
-      programs.zsh.enable = true;
+      # programs.zsh.enable = true;
+      programs = {
+        zsh = {
+          enable = true;
+          # ZVM - A better and friendly vi(vim) mode plugin for ZSH.
+          # https://github.com/jeffreytse/zsh-vi-mode
+          interactiveShellInit = ''
+            source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+          '';
+        };
+      };
 
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
