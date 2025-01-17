@@ -43,7 +43,18 @@
       enable = true;
       enableCompletion = true;
       autosuggestions.enable = true;
-      syntaxHighlighting.enable = true;
+      syntaxHighlighting = {
+        enable = true;
+        styles = {
+          comment = "fg=yellow";
+          precommand = "fg=magenta,underline";
+          command = "fg=blue,bold";
+          alias = "fg=blue,bold";
+          builtin = "fg=cyan";
+          reserved-word = "fg=magenta,bold";
+          unknown-token = "fg=red,bold";
+        };
+      };
       # ZVM - A better and friendly vi(vim) mode plugin for ZSH.
       # https://github.com/jeffreytse/zsh-vi-mode
       interactiveShellInit = ''

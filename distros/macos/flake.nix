@@ -123,6 +123,7 @@
       programs = {
         zsh = {
           enable = true;
+          enableCompletion = true;
           # ZVM - A better and friendly vi(vim) mode plugin for ZSH.
           # https://github.com/jeffreytse/zsh-vi-mode
           interactiveShellInit = ''

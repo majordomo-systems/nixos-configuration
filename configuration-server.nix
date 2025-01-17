@@ -104,10 +104,34 @@
   i18n.defaultLocale = "en_CA.UTF-8";
   # ##################################################################################### #
   # Ensure Zsh is listed in /etc/shells
-  programs.zsh.enable = true;
-  programs.zsh.enableCompletion = true;  
-  programs.zsh.autosuggestions.enable = true;
-  programs.zsh.syntaxHighlighting.enable = true;
+  # programs.zsh.enable = true;
+  # programs.zsh.enableCompletion = true;  
+  # programs.zsh.autosuggestions.enable = true;
+  # programs.zsh.syntaxHighlighting.enable = true;
+  programs = {
+    zsh = {
+      enable = true;
+      enableCompletion = true;
+      autosuggestions.enable = true;
+      syntaxHighlighting = {
+        enable = true;
+        styles = {
+          comment = "fg=yellow";
+          precommand = "fg=magenta,underline";
+          command = "fg=blue,bold";
+          alias = "fg=blue,bold";
+          builtin = "fg=cyan";
+          reserved-word = "fg=magenta,bold";
+          unknown-token = "fg=red,bold";
+        };
+      };
+      # ZVM - A better and friendly vi(vim) mode plugin for ZSH.
+      # https://github.com/jeffreytse/zsh-vi-mode
+      interactiveShellInit = ''
+        source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+      '';
+    };
+  };
   # ##################################################################################### #
   # Set default shell to zsh for all users
   environment.shells = with pkgs; [ zsh ];
