@@ -89,6 +89,67 @@
         htop 
         btop
         glow
+
+        # LINUX WORKSTATION
+        # gnome-tweaks
+        # gnome-remote-desktop
+        # gnome-extension-manager
+        # gnomeExtensions.quick-settings-tweaker
+        # gnomeExtensions.quick-settings-audio-panel
+        # gnomeExtensions.privacy-settings-menu
+        # gnomeExtensions.dash-to-panel
+        # gnomeExtensions.quake-terminal
+        # gnomeExtensions.alphabetical-app-grid
+        # gnomeExtensions.clipboard-indicator
+        # gnomeExtensions.auto-move-windows
+        # gnomeExtensions.forge
+        # gnomeExtensions.space-bar
+        # gnomeExtensions.easy-docker-containers
+        # gnomeExtensions.transparent-window-moving
+        # gnomeExtensions.gsconnect
+        # gnomeExtensions.pano
+        # gnomeExtensions.blur-my-shell
+        # gnomeExtensions.astra-monitor
+        # gnomeExtensions.dock-from-dash
+        # gnomeExtensions.sound-output-device-chooser
+        # gnomeExtensions.bluetooth-quick-connect
+        # gnomeExtensions.easyScreenCast
+        # gnomeExtensions.tiling-assistant
+        # gnomeExtensions.logo-menu
+        # gnomeExtensions.top-bar-organizer
+        # gnomeExtensions.transparent-top-bar-adjustable-transparency
+        # networkmanagerapplet
+        # github-desktop
+        # tilix
+        # alacritty
+        # warp-terminal
+        # brave
+        # firefox
+        # firefox-devedition
+        # chromium
+        # ungoogled-chromium
+        # vscode
+        # (import <nixos-unstable> {}).vscode
+        # protonvpn-gui
+        # pavucontrol
+        # timeshift
+        # flameshot
+        # dunst
+        # obsidian
+
+        # BARE METAL SERVER
+        # exfatprogs
+        # hfsprogs
+        # gparted
+        # samba
+        # kasmweb
+        # vmware-workstation
+        
+        # x86 SYSTEMS ONLY:
+        # code-cursor
+        # hyper
+        # vmware-workstation
+        # zoom-us
       ];
 
       # Activation script to add nix GUI Apps to Spotlight

@@ -161,7 +161,7 @@
               btop
               glow
 
-              # WORKSTATION
+              # LINUX WORKSTATION
               gnome-tweaks
               gnome-remote-desktop
               gnome-extension-manager
