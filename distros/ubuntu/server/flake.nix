@@ -123,6 +123,7 @@
               lazygit
               # docker
               # docker-compose
+              # kubernetes
               # lazydocker
               tldr
               xclip

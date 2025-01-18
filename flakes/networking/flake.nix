@@ -25,19 +25,11 @@
       {
         default = pkgs.mkShellNoCC {
           packages = with pkgs; [
-            vscode
             dnsutils
             whois
             nethogs
             termshark
           ];
-
-          # VSCode extension installation
-          shellHook = ''
-            mkdir -p .vscode/extensions
-            code --install-extension catppuccin.catppuccin-vsc --force
-            # Add more extensions here as needed
-          '';
         };
       }
     );
