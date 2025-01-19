@@ -21,7 +21,7 @@ usermod -a -G sudo administrator
 su administrator
 cd
 
-# wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/distros/ubuntu/server/ubuntu-server-install.sh
+# wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/flakes/system/ubuntu/server/ubuntu-server-install.sh
 
 ####################################################################################
 
@@ -54,7 +54,7 @@ ssh-add ~/.ssh/id_ed25519
 
 # INSTALL SYSTEM SOFTWARE
 sudo apt -y update && sudo apt -y upgrade
-sudo apt-get -y install curl wget build-essential software-properties-common python3-pip fail2ban
+sudo apt-get -y install build-essential software-properties-common python3-pip fail2ban
 
 ####################################################################################
 
@@ -173,7 +173,7 @@ nix run nixpkgs#cowsay Nix Installation Complete!
 
 # NIX CONFIGURATION
 cd ~/.config/nix/
-wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/distros/ubuntu/server/flake.nix
+wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/flakes/system/ubuntu/server/flake.nix
 nix flake update
 nix build .#homeConfigurations.developer.activationPackage
 nix run .#homeConfigurations.developer.activationPackage
@@ -191,6 +191,7 @@ merge.args = ["-d"]
 
 [age]
     identity = "~/.ssh/age_key.txt"
+    recipients = ["age1y6yu9gm325dpt7gccw8z0wrq2zrk9xsf2lr95kcl0a0f77mf5g3shfu2x9"]
 EOF
 
 # Decrypt Age Key - password hint: the street you grew up on

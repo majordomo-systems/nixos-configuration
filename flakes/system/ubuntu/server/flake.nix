@@ -26,7 +26,7 @@
       system = "aarch64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in {
-      homeConfigurations."admin" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."administrator" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         modules = [
@@ -46,8 +46,8 @@
             };
             # ##################################################################################### #
             # Home Manager needs a bit of information about you and the paths it should manage.
-            home.username = "admin";
-            home.homeDirectory = "/home/admin";
+            home.username = "administrator";
+            home.homeDirectory = "/home/administrator";
             # ##################################################################################### #
             # This value determines the Home Manager release that your configuration is
             # compatible with. This helps avoid breakage when a new Home Manager release
