@@ -72,3 +72,8 @@ age -d -o ~/.ssh/age_key.txt ~/.ssh/age_key.txt.enc
 
 # Apply chezmoi configuration
 chezmoi apply
+
+####################################################################################
+# Set ZSH as Default Shell
+echo "/home/administrator/.nix-profile/bin/zsh" | sudo tee -a /etc/shells
+chsh -s $(which zsh)
