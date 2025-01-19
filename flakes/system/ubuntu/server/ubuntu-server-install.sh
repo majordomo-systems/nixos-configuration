@@ -35,12 +35,6 @@ wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/mai
 
 ####################################################################################
 
-# Set ZSH as Default Shell
-echo "/home/administrator/.nix-profile/bin/zsh" | sudo tee -a /etc/shells
-chsh -s $(which zsh)
-
-####################################################################################
-
 # INSTALL SYSTEM SOFTWARE
 sudo apt -y update && sudo apt -y upgrade
 sudo apt-get -y install build-essential software-properties-common python3-pip fail2ban
@@ -72,6 +66,12 @@ wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/mai
 nix flake update
 nix build .#homeConfigurations.administrator.activationPackage
 nix run .#homeConfigurations.administrator.activationPackage
+
+####################################################################################
+
+# Set ZSH as Default Shell
+echo "/home/administrator/.nix-profile/bin/zsh" | sudo tee -a /etc/shells
+chsh -s $(which zsh)
 
 ####################################################################################
 
