@@ -103,6 +103,8 @@
               zsh
               zsh-vi-mode
               nushell
+              neovim
+              chezmoi
               gcc
               gnumake
               sshs
@@ -118,20 +120,14 @@
               wget
               curl
               ripgrep
+              zoxide
               git
               gh
               lazygit
-              # docker
-              # docker-compose
-              # kubernetes
-              # lazydocker
+              lazydocker
               tldr
               xclip
               portal
-
-              # EXTENDED SYSTEM
-              neovim
-              chezmoi
               starship
               catppuccin
               imagemagick
@@ -140,7 +136,6 @@
               tmate
               yazi
               navi
-              llm
               gdu
               bottom
               tldr
@@ -150,16 +145,21 @@
               zip
               gzip
               unzip
-              zoxide
               neofetch
               trash-cli
               speedtest-cli
-              openvpn
               ntp
               ctop
               htop
               btop
               glow
+
+              # EXTENDED SYSTEM
+              llm
+              # openvpn
+              # docker
+              # docker-compose
+              # kubernetes
 
               # LINUX WORKSTATION
               gnome-tweaks
