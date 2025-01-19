@@ -58,8 +58,6 @@
     };
   };
 
-  virtualisation.docker.enable = true;
-
   # NixOS as a VM HOST - if you want to run VMs from within Nix(OS).
   # https://nixos.wiki/wiki/Virtualization
   virtualisation.vmware.host.enable = true;
@@ -204,5 +202,8 @@
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
   };
+  # ##################################################################################### #
+  # Enable Docker
+  virtualisation.docker.enable = true;
   # ##################################################################################### #
 }

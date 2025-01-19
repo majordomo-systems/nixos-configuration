@@ -261,7 +261,7 @@
             };
             # ##################################################################################### #
             # Start the Docker Daemon
-            # virtualisation.docker.enable = true;
+            virtualisation.docker.enable = true;
             # ##################################################################################### #
             # Let Home Manager install and manage itself.
             programs.home-manager.enable = true;

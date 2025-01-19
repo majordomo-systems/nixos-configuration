@@ -8,7 +8,6 @@
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     home = "/home/developer";
     packages = with pkgs; [];
-    # shell = pkgs.zsh;
   };
 
   # Enable automatic login for the user with updated option path

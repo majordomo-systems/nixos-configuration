@@ -4,16 +4,15 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.admin = {
     isNormalUser = true;
-    description = "admin";
+    description = "administrator";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
-    home = "/home/admin";
+    home = "/home/administrator";
     packages = with pkgs; [];
-    # shell = pkgs.zsh;
   };
 
   # Enable automatic login for the user with updated option path
   services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "admin";
+  services.displayManager.autoLogin.user = "administrator";
 
   # Workaround for GNOME autologin
   systemd.services."getty@tty1".enable = false;
@@ -23,7 +22,7 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.admin = import ./users/admin.home.nix;
+    users.admin = import ./users/administrator.home.nix;
   };
 
   # Create samba users for network drive access

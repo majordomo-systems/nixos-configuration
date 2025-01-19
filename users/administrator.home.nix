@@ -10,8 +10,8 @@
     ../applications/tilix.nix
   ];
 
-  home.username = "admin";
-  home.homeDirectory = "/home/admin";
+  home.username = "administrator";
+  home.homeDirectory = "/home/administrator";
   home.stateVersion = "24.11";
   home.packages = with pkgs; [];
 }
