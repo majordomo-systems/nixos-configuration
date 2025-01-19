@@ -120,39 +120,6 @@ ssh-add ~/.ssh/id_ed25519
 
 ####################################################################################
 
-# PULL DOCKER CONTAINERS
-
-# RUN NGINX Proxy
-docker run -d -p 80:80 -p 443:443 \
-    --name nginx-proxy \
-    -v /path/to/certs:/etc/nginx/certs:ro \
-    -v /etc/nginx/vhost.d \
-    -v /usr/share/nginx/html \
-    -v /var/run/docker.sock:/tmp/docker.sock:ro \
-    jwilder/nginx-proxy
-docker run -d \
-    --name nginx-proxy-companion \
-    -v /path/to/certs:/etc/nginx/certs:rw \
-    --volumes-from nginx-proxy \
-    -v /var/run/docker.sock:/var/run/docker.sock:ro \
-    jrcs/letsencrypt-nginx-proxy-companion
-
-# RUN VSCode Server
-mkdir -p ~/.config
-docker run -d --expose 80 -e VIRTUAL_HOST=code.majordomo.systems -e VIRTUAL_PORT=8080 -e LETSENCRYPT_HOST=code.majordomo.systems -e LETSENCRYPT_EMAIL=admin@majordomo.systems --name code-server -e PASSWORD='developer' \
-  -v "$HOME/.config:/home/coder/.config" \
-  -u "$(id -u):$(id -g)" \
-  codercom/code-server:latest
-
-# RUN n8n Server
-# docker volume create n8n_data
-# docker run -v /home/admin/git/scraper:/home/node/scraper -e VIRTUAL_HOST=n8n.majordomo.systems -it --rm --name n8n -p 5678:5678 -v n8n_data:/home/node/.n8n docker.n8n.io/n8nio/n8n &
-
-# Create WebSSH2 Connection
-# docker run -e VIRTUAL_HOST=shell.majordomo.systems -it --rm --name webssh2 -p 2222:2222 psharkey/webssh2
-
-####################################################################################
-
 # PULL AND CONFIGURE STARTUP FILE FOR CONTAINERS
 cd
 wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/docker-start.sh
