@@ -14,14 +14,19 @@
 
 ####################################################################################
 
-# CREATE A NEW USER & ADD TO SUDOERS
+# CREATE AND SETUP A NEW USER
 adduser administrator
 usermod -a -G sudo administrator
 # usermod -a -G docker administrator
 su administrator
 cd
+mkdir Downloads
 
-# wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/flakes/system/ubuntu/server/ubuntu-server-install.sh
+####################################################################################
+
+# DOWNLOAD INSTALLATION SCRIPT
+cd Downloads
+wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/flakes/system/ubuntu/server/ubuntu-server-install.sh
 
 ####################################################################################
 
@@ -41,21 +46,21 @@ sudo apt -y update && sudo apt -y upgrade
 sudo apt-get -y install build-essential software-properties-common python3-pip fail2ban
 
 # INSTALL DOCKER
-# cd ~/Downloads
-# curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-# echo \
-# "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-# $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-# sudo apt update
-# sudo apt -y --fix-broken install
-# sudo apt-get -y install docker-ce docker-ce-cli containerd.io docker-compose docker-compose-plugin
-# sudo usermod -aG docker $USER
+cd ~/Downloads
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo \
+"deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update
+sudo apt -y --fix-broken install
+sudo apt-get -y install docker-ce docker-ce-cli containerd.io docker-compose docker-compose-plugin
+sudo usermod -aG docker $USER
 
 ####################################################################################
 
 # NIX INSTALLATION
 sh <(curl -L https://nixos.org/nix/install) --no-daemon
-. /home/admin/.nix-profile/etc/profile.d/nix.sh 
+. /home/administrator/.nix-profile/etc/profile.d/nix.sh 
 mkdir -p ~/.config/nix
 echo "experimental-features = nix-command flakes" | tee -a ~/.config/nix/nix.conf
 source ~/.profile
