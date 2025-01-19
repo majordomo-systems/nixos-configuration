@@ -138,8 +138,8 @@ docker run -v /home/admin/git/scraper:/home/node/scraper -e VIRTUAL_HOST=n8n.maj
 
 # PULL AND CONFIGURE STARTUP FILE FOR CONTAINERS
 cd
-wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/distros/ubuntu/server/ubuntu-server-start.sh && mv ubuntu-server-start.sh start.sh
-sudo chmod +x start.sh
+wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/docker-start.sh
+sudo chmod +x docker-start.sh
 
 # CREATE A SERVICE AND ADD IT TO init.d
 sudo echo '
@@ -148,7 +148,7 @@ Description=Start Containers
 After=network.target
 
 [Service]
-ExecStart=/home/admin/start.sh &
+ExecStart=/home/administrator/docker-start.sh &
 
 [Install]
 WantedBy=default.target
