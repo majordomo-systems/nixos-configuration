@@ -23,7 +23,7 @@
   outputs = { nixpkgs, home-manager, catppuccin, ... }:
     let
       # Adjust to match platform, for instance x86_64-linux or aarch64-linux.
-      system = "aarch64-linux";
+      system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in {
       homeConfigurations."administrator" = home-manager.lib.homeManagerConfiguration {

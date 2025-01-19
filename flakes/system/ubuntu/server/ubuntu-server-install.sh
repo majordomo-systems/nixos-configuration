@@ -175,8 +175,8 @@ nix run nixpkgs#cowsay Nix Installation Complete!
 cd ~/.config/nix/
 wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/flakes/system/ubuntu/server/flake.nix
 nix flake update
-nix build .#homeConfigurations.developer.activationPackage
-nix run .#homeConfigurations.developer.activationPackage
+nix build .#homeConfigurations.administrator.activationPackage
+nix run .#homeConfigurations.administrator.activationPackage
 
 ####################################################################################
 
