@@ -15,10 +15,10 @@
 ####################################################################################
 
 # CREATE A NEW USER & ADD TO SUDOERS
-adduser admin
-usermod -a -G sudo admin
-usermod -a -G docker admin
-su admin
+adduser administrator
+usermod -a -G sudo administrator
+# usermod -a -G docker administrator
+su administrator
 cd
 
 # SSH CONFIGURATION
