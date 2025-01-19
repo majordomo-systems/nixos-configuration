@@ -1,5 +1,26 @@
 #!/bin/bash
 
+####################################################################################
+
+# CREATE DROPLET:
+# Region: Toronto
+# Marketplace: Docker
+# Type: Basic
+# CPU: Premium Intel $7/mo
+# Need to have password authentication to ssh
+# Authentication Method: SSH Keys
+# Server Name: majordomo.systems
+# Tags: docker, vscode, n8n
+
+####################################################################################
+
+# CREATE A NEW USER & ADD TO SUDOERS
+adduser administrator
+usermod -a -G sudo administrator
+# usermod -a -G docker administrator
+su administrator
+cd
+
 # wget https://raw.githubusercontent.com/majordomo-systems/nixos-configuration/main/distros/ubuntu/server/ubuntu-server-install.sh
 
 ####################################################################################
