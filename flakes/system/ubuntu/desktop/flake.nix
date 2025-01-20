@@ -83,7 +83,7 @@
               # FONTS
               #corefonts # Microsoft fonts
               ubuntu_font_family
-              nerdfonts
+              # nerdfonts
               fira
               fira-mono
               fira-code
@@ -148,6 +148,7 @@
               neofetch
               trash-cli
               speedtest-cli
+              tailscale
               ntp
               ctop
               htop

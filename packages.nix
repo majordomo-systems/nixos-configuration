@@ -31,38 +31,35 @@
     protonvpn-cli
 
     # CORE SYSTEM
-    bash   
+    bash
     zsh
     zsh-vi-mode
     nushell
+    neovim
+    chezmoi
     gcc
     gnumake
     sshs
     openssh
     openssl
-    direnv 
+    direnv
     ccrypt
-    age   
-    tmux  
-    fd  
-    bat 
+    age
+    tmux
+    fd
+    bat
     fzf
     wget
     curl
     ripgrep
-    git   
+    zoxide
+    git
     gh
-    lazygit  
-    docker
-    docker-compose
+    lazygit
     lazydocker
     tldr
     xclip
     portal
-
-    # EXTENDED SYSTEM
-    neovim
-    chezmoi
     starship
     catppuccin
     imagemagick
@@ -71,24 +68,22 @@
     tmate
     yazi
     navi
-    llm
     gdu
     bottom
     tldr
-    jq  
+    jq
     duf
-    w3m 
-    zip 
-    gzip   
-    unzip  
-    zoxide
+    w3m
+    zip
+    gzip
+    unzip
     neofetch
     trash-cli
     speedtest-cli
-    openvpn
+    tailscale
     ntp
     ctop
-    htop 
+    htop
     btop
     glow
 
