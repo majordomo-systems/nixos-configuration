@@ -23,6 +23,12 @@
   catppuccin.enable = true;
   catppuccin.flavor = "mocha";
   # ##################################################################################### #
+  # Ensure Gnome doesn't sleep/suspend/hibernate
+  systemd.targets.sleep.enable = false;
+  systemd.targets.suspend.enable = false;
+  systemd.targets.hibernate.enable = false;
+  systemd.targets.hybrid-sleep.enable = false;
+  # ##################################################################################### #
   #  Enable xRDP for Remote Desktop Connections
   services.xrdp = {
     enable = true;
@@ -30,13 +36,7 @@
     openFirewall = true;
     defaultWindowManager = "${pkgs.gnome.gnome-session}/bin/gnome-session";
   };
-
-  # Ensure Gnome doesn't sleep/suspend/hibernate
-  systemd.targets.sleep.enable = false;
-  systemd.targets.suspend.enable = false;
-  systemd.targets.hibernate.enable = false;
-  systemd.targets.hybrid-sleep.enable = false;
-
+  # ##################################################################################### #
   # Mount exFAT drive (4tb network drive)
   fileSystems."/mnt/network_drive" = {
     device = "/dev/nvme0n1p1";  # Replace with the correct partition or UUID
@@ -57,11 +57,11 @@
       };
     };
   };
-
+  # ##################################################################################### #
   # NixOS as a VM HOST - if you want to run VMs from within Nix(OS).
   # https://nixos.wiki/wiki/Virtualization
   virtualisation.vmware.host.enable = true;
-
+  # ##################################################################################### #
   # NixOS as a VM GUEST - if you want to run this system from within a VM.
   # https://nixos.wiki/wiki/Virtualization
   # Enable vmware video driver for better performance:
@@ -85,7 +85,7 @@
   #     Restart = "on-failure";
   #   };
   # };
-
+  # ##################################################################################### #
   # services.cockpit = {
   #   enable = true;
   #   package = pkgs.cockpit;
@@ -202,6 +202,11 @@
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
   };
+  # ##################################################################################### #
+  # Enable Tailscale
+  services.tailscale.enable = true;
+  # networking.nameservers = [ "100.100.100.100" "8.8.8.8" "1.1.1.1" ];
+  # networking.search = [ "example.ts.net" ];
   # ##################################################################################### #
   # Enable Docker
   virtualisation.docker.enable = true;
