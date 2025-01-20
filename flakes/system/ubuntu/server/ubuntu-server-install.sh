@@ -4,13 +4,23 @@
 
 # CREATE DROPLET:
 # Region: Toronto
-# Marketplace: Docker
+# OS: Ubuntu 24.10
+# Marketplace: N/A
 # Type: Basic
-# CPU: Premium Intel $7/mo
+# CPU: Premium AMD 2GB RAM, 50GB HD - $14/mo [expand to 2cpu 4GB RAM when installing]
 # Need to have password authentication to ssh
 # Authentication Method: SSH Keys
 # Server Name: majordomo.systems
-# Tags: docker, vscode, n8n
+# Tags: docker
+
+# curl -X POST -H 'Content-Type: application/json' \
+#     -H 'Authorization: Bearer '$TOKEN'' \
+#     -d '{"name":"ubuntu-s-1vcpu-2gb-amd-tor1-01",
+#         "size":"s-1vcpu-2gb-amd",
+#         "region":"tor1",
+#         "image":"ubuntu-24-10-x64",
+#         "vpc_uuid":"d7e0ecad-7420-4d1b-b19e-60034d4c1f1a"}' \
+#     "https://api.digitalocean.com/v2/droplets"
 
 ####################################################################################
 
