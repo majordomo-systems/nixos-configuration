@@ -226,8 +226,6 @@
             # ##################################################################################### #
             # Systemd user service for Tailscaled
             systemd.user.services.tailscaled = {
-              description = "Tailscale Daemon";
-              wantedBy = [ "default.target" ];
               serviceConfig = {
                 ExecStart = "/home/administrator/.nix-profile/bin/tailscaled --state=/home/administrator/.local/state/tailscaled/tailscaled.state";
                 Restart = "always";
@@ -239,12 +237,13 @@
                 ProtectControlGroups = true;
                 NoNewPrivileges = true;
               };
+              install = {
+                wantedBy = [ "default.target" ];
+              };
             };
 
-            # Ensure Tailscale state directory exists
-            home.directories.".local/state/tailscaled" = {
-              mode = "0700";
-            };
+            # Create a placeholder file to ensure the directory exists
+            home.file.".local/state/tailscaled/placeholder".text = "";
             # ##################################################################################### #
             # fonts.fontconfig.enable = true;
             # ##################################################################################### #
