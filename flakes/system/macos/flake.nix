@@ -198,7 +198,7 @@
       # Enable Tailscale
       services.tailscale = {
         enable = true;
-        stateDir = "/var/lib/tailscale";
+        # stateDir = "/var/lib/tailscale";
       };
 
       # Set Git commit hash for darwin-version.
