@@ -224,6 +224,28 @@
               # zoom-us
             ];
             # ##################################################################################### #
+            # Systemd user service for Tailscaled
+            systemd.user.services.tailscaled = {
+              description = "Tailscale Daemon";
+              wantedBy = [ "default.target" ];
+              serviceConfig = {
+                ExecStart = "/home/administrator/.nix-profile/bin/tailscaled --state=${config.home.homeDirectory}/.local/state/tailscaled/tailscaled.state";
+                Restart = "always";
+                AmbientCapabilities = "CAP_NET_ADMIN CAP_NET_RAW";
+                CapabilityBoundingSet = "CAP_NET_ADMIN CAP_NET_RAW";
+                ProtectSystem = "strict";
+                ProtectHome = true;
+                ProtectKernelModules = true;
+                ProtectControlGroups = true;
+                NoNewPrivileges = true;
+              };
+            };
+
+            # Ensure Tailscale state directory exists
+            home.file.".local/state/tailscaled".directory = {
+              mode = "0700";
+            };
+            # ##################################################################################### #
             # fonts.fontconfig.enable = true;
             # ##################################################################################### #
             # Home Manager is pretty good at managing dotfiles. The primary way to manage
