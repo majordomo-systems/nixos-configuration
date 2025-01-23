@@ -229,7 +229,7 @@
               description = "Tailscale Daemon";
               wantedBy = [ "default.target" ];
               serviceConfig = {
-                ExecStart = "/home/administrator/.nix-profile/bin/tailscaled --state=${config.home.homeDirectory}/.local/state/tailscaled/tailscaled.state";
+                ExecStart = "/home/administrator/.nix-profile/bin/tailscaled --state=/home/administrator/.local/state/tailscaled/tailscaled.state";
                 Restart = "always";
                 AmbientCapabilities = "CAP_NET_ADMIN CAP_NET_RAW";
                 CapabilityBoundingSet = "CAP_NET_ADMIN CAP_NET_RAW";
@@ -242,7 +242,7 @@
             };
 
             # Ensure Tailscale state directory exists
-            home.file.".local/state/tailscaled".directory = {
+            home.directories.".local/state/tailscaled" = {
               mode = "0700";
             };
             # ##################################################################################### #
