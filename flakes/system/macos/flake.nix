@@ -195,6 +195,12 @@
         };
       };
 
+      # Enable Tailscale
+      services.tailscale = {
+        enable = true;
+        stateDir = "/var/lib/tailscale";
+      };
+
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
         
