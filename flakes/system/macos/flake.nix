@@ -181,6 +181,11 @@
       # Enable direnv
       programs.direnv.enable = true;
 
+      # Enable Tailscale
+      services.tailscale = {
+        enable = true;
+      };
+      
       # Ensure Zsh is listed in /etc/shells
       # programs.zsh.enable = true;
       programs = {
@@ -193,12 +198,6 @@
             source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
           '';
         };
-      };
-
-      # Enable Tailscale
-      services.tailscale = {
-        enable = true;
-        # stateDir = "/var/lib/tailscale";
       };
 
       # Set Git commit hash for darwin-version.
