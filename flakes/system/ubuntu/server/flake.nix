@@ -148,7 +148,7 @@
               neofetch
               trash-cli
               speedtest-cli
-              # tailscale
+              tailscale
               ntp
               ctop
               htop

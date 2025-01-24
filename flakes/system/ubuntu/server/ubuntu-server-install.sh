@@ -129,6 +129,24 @@ eval `ssh-agent -s`
 ssh-add ~/.ssh/id_ed25519
 
 ####################################################################################
+sudo nano /etc/systemd/system/tailscaled.service
+
+[Unit]
+Description=Tailscale Daemon
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/sudo /home/administrator/.nix-profile/bin/tailscaled
+Restart=on-failure
+User=root
+
+[Install]
+WantedBy=multi-user.target
+
+sudo .nix-profile/bin/tailscale up
+####################################################################################
 
 # PULL AND CONFIGURE STARTUP FILE FOR CONTAINERS
 cd
