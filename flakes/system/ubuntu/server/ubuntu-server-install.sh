@@ -129,8 +129,10 @@ eval `ssh-agent -s`
 ssh-add ~/.ssh/id_ed25519
 
 ####################################################################################
-sudo nano /etc/systemd/system/tailscaled.service
+# CREATE A SERVICE FOR THE TAILSCALE DAEMON
+# sudo nano /etc/systemd/system/tailscaled.service
 
+sudo tee /etc/systemd/system/tailscaled.service > /dev/null <<EOF
 [Unit]
 Description=Tailscale Daemon
 After=network-online.target
@@ -144,7 +146,13 @@ User=root
 
 [Install]
 WantedBy=multi-user.target
+EOF
 
+sudo systemctl daemon-reload
+sudo systemctl enable tailscaled
+sudo systemctl start tailscaled
+
+# START TAILSCALE
 sudo .nix-profile/bin/tailscale up
 ####################################################################################
 
