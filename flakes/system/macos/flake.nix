@@ -87,11 +87,11 @@
 
         # EXTENDED SYSTEM
         llm
-        ollama
-        open-webui
+        # ollama
+        # open-webui
         # openvpn
-        # docker
-        # docker-compose
+        docker
+        docker-compose
         # kubernetes
 
         # LINUX WORKSTATION

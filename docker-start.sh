@@ -3,8 +3,8 @@
 ####################################################################################
 
 # LOGIN TO DOCKER
-# docker login --username majordomo-admin --password GHCR-TOKEN-HERE ghcr.io
-echo "GHCR-TOKEN-HERE" | docker login ghcr.io -u majordomo-admin --password-stdin
+# docker login --username majordomo-admin --password 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 ghcr.io
+echo "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" | docker login ghcr.io -u majordomo-admin --password-stdin
 
 # USE THIS COMMAND TO RUN SCRIPT:
 # ./start.sh &
