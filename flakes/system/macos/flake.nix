@@ -15,10 +15,10 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs }:
   let
     configuration = { pkgs, config, ... }: {
-
+      # ##################################################################################### #
       # Allow UnFree Packages
       nixpkgs.config.allowUnfree = true;
-
+      # ##################################################################################### #
       # List packages installed in system profile
       environment.systemPackages = with pkgs; [
 
@@ -155,7 +155,7 @@
         # vmware-workstation
         # zoom-us
       ];
-
+      # ##################################################################################### #
       # Activation script to add nix GUI Apps to Spotlight
       system.activationScripts.applications.text = let
         env = pkgs.buildEnv {
@@ -176,18 +176,21 @@
             ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
           done
         '';
-            
+      # ##################################################################################### #
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
-
+      # ##################################################################################### #
       # Enable direnv
       programs.direnv.enable = true;
-
+      # ##################################################################################### #
       # Enable Tailscale
       services.tailscale = {
         enable = true;
       };
-      
+      # ##################################################################################### #
+      # Enable Docker
+      virtualisation.docker.enable = true;
+      # ##################################################################################### #
       # Ensure Zsh is listed in /etc/shells
       # programs.zsh.enable = true;
       programs = {
@@ -201,13 +204,13 @@
           '';
         };
       };
-
+      # ##################################################################################### #
       # Set Git commit hash for darwin-version.
       system.configurationRevision = self.rev or self.dirtyRev or null;
-        
+      # ##################################################################################### #
       # Used for backwards compatibility, please read the changelog before changing.
       system.stateVersion = 5;
-
+      # ##################################################################################### #
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
     };
