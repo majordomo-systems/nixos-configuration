@@ -86,6 +86,7 @@
         glow
 
         # EXTENDED SYSTEM
+        python3
         llm
         ollama
         # open-webui
