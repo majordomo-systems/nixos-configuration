@@ -129,9 +129,12 @@ eval `ssh-agent -s`
 ssh-add ~/.ssh/id_ed25519
 
 ####################################################################################
+# SET UP TAILSCALE
+# DISABLING KEY EXPIRY - https://tailscale.com/kb/1028/key-expiry
+# MAGIC DNS - https://tailscale.com/kb/1081/magicdns
+
 # CREATE A SERVICE FOR THE TAILSCALE DAEMON
 # sudo nano /etc/systemd/system/tailscaled.service
-
 sudo tee /etc/systemd/system/tailscaled.service > /dev/null <<EOF
 [Unit]
 Description=Tailscale Daemon

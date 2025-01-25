@@ -157,6 +157,8 @@
 
               # EXTENDED SYSTEM
               # llm
+              # ollama
+              # open-webui
               # openvpn
               # docker
               # docker-compose
