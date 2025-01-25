@@ -87,11 +87,12 @@
 
         # EXTENDED SYSTEM
         llm
-        # ollama
+        ollama
         # open-webui
         # openvpn
-        docker
-        docker-compose
+        # colima
+        # docker
+        # docker-compose
         # kubernetes
 
         # LINUX WORKSTATION
@@ -187,9 +188,6 @@
       services.tailscale.enable = true;
       # networking.nameservers = [ "100.100.100.100" "8.8.8.8" "1.1.1.1" ];
       # networking.search = [ "example.ts.net" ];
-      # ##################################################################################### #
-      # Enable Docker
-      # virtualisation.docker.enable = true;
       # ##################################################################################### #
       # Ensure Zsh is listed in /etc/shells
       # programs.zsh.enable = true;
