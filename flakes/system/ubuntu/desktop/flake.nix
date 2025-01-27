@@ -156,10 +156,12 @@
               glow
 
               # EXTENDED SYSTEM
+              python3
               llm
               # ollama
               # open-webui
               # openvpn
+              # colima
               # docker
               # docker-compose
               # kubernetes
