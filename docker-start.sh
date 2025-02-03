@@ -70,17 +70,17 @@ docker run -e VIRTUAL_HOST=v1.ggg.studio -e LETSENCRYPT_HOST=v1.ggg.studio -e LE
 
 docker run -e VIRTUAL_HOST=ggg.studio -e LETSENCRYPT_HOST=ggg.studio -e LETSENCRYPT_EMAIL=admin@majordomo.systems -d --restart always -p 9892:3000 --name ggg-studio ghcr.io/majordomo-systems/ggg-studio:latest
 
-docker run -e VIRTUAL_HOST=dev.ggg.studio -e LETSENCRYPT_HOST=dev.ggg.studio -e LETSENCRYPT_EMAIL=admin@majordomo.systems -d --restart always -p 9893:3000 --name dev-ggg-studio ghcr.io/majordomo-systems/ggg-studio:latest
+# docker run -e VIRTUAL_HOST=dev.ggg.studio -e LETSENCRYPT_HOST=dev.ggg.studio -e LETSENCRYPT_EMAIL=admin@majordomo.systems -d --restart always -p 9893:3000 --name dev-ggg-studio ghcr.io/majordomo-systems/ggg-studio:latest
 
 # start homepage dashboard
-docker run --name homepage \
--e PUID=1000 \
--e PGID=1000 \
--e VIRTUAL_HOST=admin.majordomo.systems \
--e LETSENCRYPT_HOST=admin.majordomo.systems \
--e LETSENCRYPT_EMAIL=admin@majordomo.systems \
--p 3001:3000 \
--v /home/developer/homepage/config:/app/config \
--v /var/run/docker.sock:/var/run/docker.sock:ro \
---restart unless-stopped \
-ghcr.io/gethomepage/homepage:latest
+# docker run --name homepage \
+# -e PUID=1000 \
+# -e PGID=1000 \
+# -e VIRTUAL_HOST=admin.majordomo.systems \
+# -e LETSENCRYPT_HOST=admin.majordomo.systems \
+# -e LETSENCRYPT_EMAIL=admin@majordomo.systems \
+# -p 3001:3000 \
+# -v /home/developer/homepage/config:/app/config \
+# -v /var/run/docker.sock:/var/run/docker.sock:ro \
+# --restart unless-stopped \
+# ghcr.io/gethomepage/homepage:latest
