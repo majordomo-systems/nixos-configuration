@@ -70,7 +70,7 @@ docker run -e VIRTUAL_HOST=v1.ggg.studio -e LETSENCRYPT_HOST=v1.ggg.studio -e LE
 
 docker run -e VIRTUAL_HOST=ggg.studio -e LETSENCRYPT_HOST=ggg.studio -e LETSENCRYPT_EMAIL=admin@majordomo.systems -d --restart always -p 9892:3000 --name ggg-studio ghcr.io/majordomo-systems/ggg-studio:latest
 
-docker run -e VIRTUAL_HOST=dev.ggg.studio -e LETSENCRYPT_HOST=dev.ggg.studio -e LETSENCRYPT_EMAIL=admin@majordomo.systems -d --restart always -p 9892:3000 --name dev-ggg-studio ghcr.io/majordomo-systems/ggg-studio:latest
+docker run -e VIRTUAL_HOST=dev.ggg.studio -e LETSENCRYPT_HOST=dev.ggg.studio -e LETSENCRYPT_EMAIL=admin@majordomo.systems -d --restart always -p 9893:3000 --name dev-ggg-studio ghcr.io/majordomo-systems/ggg-studio:latest
 
 # start homepage dashboard
 docker run --name homepage \
