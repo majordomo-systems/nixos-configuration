@@ -1,0 +1,69 @@
+# Nginx Proxy Manager (NPM) - https://nginxproxymanager.com/setup/
+# First create the network: i.e: docker network create nginx-proxy
+# docker compose up -d
+# go to ip address:81, i.e: http://143.110.209.65:81
+#     Email:    admin@example.com
+#     Password: changeme
+# Add Hosts first: hostname and port
+# Add SSL Certificates in UI(make sure domain registrar Cloudflare/Porkbun are already setup)
+# Go back to Hosts section in UI: EDIT - SSL Tab - Choose SSL Certificate
+  
+services:
+  app:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      # These ports are in format <host-port>:<container-port>
+      - '80:80' # Public HTTP Port
+      - '443:443' # Public HTTPS Port
+      - '81:81' # Admin Web Port
+      # Add any other Stream port you want to expose
+      # - '21:21' # FTP
+    environment:
+      # Postgres parameters:
+      DB_POSTGRES_HOST: 'db'
+      DB_POSTGRES_PORT: '5432'
+      DB_POSTGRES_USER: 'npm'
+      DB_POSTGRES_PASSWORD: 'npmpass'
+      DB_POSTGRES_NAME: 'npm'
+      # Uncomment this if IPv6 is not enabled on your host
+      # DISABLE_IPV6: 'true'
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+    depends_on:
+      - db
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: 'npm'
+      POSTGRES_PASSWORD: 'npmpass'
+      POSTGRES_DB: 'npm'
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+
+  portainer:
+    image: portainer/portainer
+    privileged: true
+    volumes:
+      - './data:/data'
+      - '/var/run/docker.sock:/var/run/docker.sock'
+    restart: unless-stopped
+
+  ggg-studio:
+    image: ghcr.io/majordomo-systems/ggg-studio:latest
+    privileged: true
+
+  # v1-ggg-studio:
+  #   image: ggg-studio
+  #   privileged: true
+
+  majordomo-systems:
+    image: majordomo-systems
+    privileged: true
+
+networks:
+  default:
+    external: true
+    name: nginx-proxy

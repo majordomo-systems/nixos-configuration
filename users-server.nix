@@ -2,7 +2,7 @@
 
 {
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.admin = {
+  users.users.administrator = {
     isNormalUser = true;
     description = "administrator";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
@@ -18,11 +18,11 @@
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
-  # Configure Home Manager for developer
+  # Configure Home Manager for administrator
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.admin = import ./users/administrator.home.nix;
+    users.administrator = import ./users/administrator.home.nix;
   };
 
   # Create samba users for network drive access

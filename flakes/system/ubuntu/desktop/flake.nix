@@ -102,6 +102,8 @@
               # CORE SYSTEM
               zsh
               zsh-vi-mode
+              zsh-autosuggestions
+              zsh-autocomplete
               nushell
               neovim
               chezmoi

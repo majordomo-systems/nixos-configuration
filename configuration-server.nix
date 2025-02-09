@@ -15,7 +15,7 @@
   # Home Manager
   home-manager.backupFileExtension = "backup";
   
-  home-manager.users.admin = {
+  home-manager.users.administrator = {
     imports = [
       <catppuccin/modules/home-manager>
     ];
@@ -75,12 +75,12 @@
   #   wantedBy = [ "multi-user.target" ];
   #   serviceConfig = {
   #     ExecStart = [
-  #       "/run/current-system/sw/bin/vmrun start /home/admin/vmware/private/Private.vmx nogui"
-  #       "/run/current-system/sw/bin/vmrun start /home/admin/vmware/public/Public.vmx nogui"
+  #       "/run/current-system/sw/bin/vmrun start /home/administrator/vmware/private/Private.vmx nogui"
+  #       "/run/current-system/sw/bin/vmrun start /home/administrator/vmware/public/Public.vmx nogui"
   #     ];
   #     ExecStop = [
-  #       "/run/current-system/sw/bin/vmrun stop /home/admin/vmware/private/Private.vmx"
-  #       "/run/current-system/sw/bin/vmrun stop /home/admin/vmware/public/Public.vmx"
+  #       "/run/current-system/sw/bin/vmrun stop /home/administrator/vmware/private/Private.vmx"
+  #       "/run/current-system/sw/bin/vmrun stop /home/administrator/vmware/public/Public.vmx"
   #     ];
   #     Restart = "on-failure";
   #   };
