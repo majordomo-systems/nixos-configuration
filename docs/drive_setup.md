@@ -8,7 +8,7 @@ group = drivegroup
 sudo groupadd drive_group
 
 drive_read - guest
-drive_readwrite - bona*****
+drive_readwrite - bona***** (current - drive_readwrite)
 
 ***Add to users.nix:***
 users.users.drive_readwrite = {

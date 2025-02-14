@@ -51,17 +51,33 @@ services:
       - '/var/run/docker.sock:/var/run/docker.sock'
     restart: unless-stopped
 
+  majordomo-systems:
+    image: majordomo-systems
+    privileged: false
+    
   ggg-studio:
     image: ghcr.io/majordomo-systems/ggg-studio:latest
-    privileged: true
+    privileged: false
 
   # v1-ggg-studio:
   #   image: ggg-studio
-  #   privileged: true
+  #   privileged: false
 
-  majordomo-systems:
-    image: majordomo-systems
-    privileged: true
+  # plesk:
+  #   image: plesk/plesk
+  #   privileged: true
+  #   tmpfs:
+  #     - /tmp
+  #     - /run
+  #     - /run/lock
+  #   volumes:
+  #     - /sys/fs/cgroup:/sys/fs/cgroup:ro
+  #   ports:
+  #     - 80:80
+  #     - 443:443
+  #     - 8880:8880
+  #     - 8443:8443
+  #     - 8447:8447
 
 networks:
   default:
