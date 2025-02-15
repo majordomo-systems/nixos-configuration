@@ -269,6 +269,9 @@
             # ##################################################################################### #
             # Let Home Manager install and manage itself.
             programs.home-manager.enable = true;
+            # ##################################################################################### #
+            # Enable direnv
+            programs.direnv.enable = true;
           }
           # ##################################################################################### #
           # Include Catppuccin's Home Manager module as you originally did:
